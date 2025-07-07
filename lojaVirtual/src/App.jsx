@@ -2,7 +2,7 @@ import './App.css'
 
 function App (){
   return(
-    <h1 class="text-3xl font-bold underline">Teste Tailwind</h1>
+    <h1 class="color: blue 500">Teste Tailwind</h1>
   )
 }
 
