@@ -1,8 +1,11 @@
 import './App.css'
+import Homepage from './paginas/Homepage'
 
 function App (){
   return(
-    <h1>Teste Tailwind</h1>
+      <div>
+        <Homepage />
+      </div>
   )
 }
 
