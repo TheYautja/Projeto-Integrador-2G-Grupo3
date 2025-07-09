@@ -1,15 +1,13 @@
 import "../CSS/Header.css"
+import { Link } from "react-router";
+import React from "react";
 
 function Header(){
     return(
         <header className="header">
             <nav>
-                <ul>
-                    <li>link</li>
-                    <li>link</li>
-                    <li>link</li>
-                    <li>link</li>
-                    <li>link</li>
+                <ul className="linksNAV">
+                    <li><link to='/Homepage'>Homepage</link></li>
                 </ul>
             </nav>
         </header>
