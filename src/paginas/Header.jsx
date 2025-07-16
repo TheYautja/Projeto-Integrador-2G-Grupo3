@@ -9,6 +9,7 @@ function Header(){
                 <ul className="linksNAV">
                     <li><Link to = "../Homepage">homepage </Link> </li>
                     <li> <Link to = "../ProdutoIndividual">produto individual </Link> </li>
+                    <li> <Link to = "../Dicaseoficinas">Dicas e Oficinas</Link> </li>
                 </ul>
             </nav>
         </header>
