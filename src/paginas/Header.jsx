@@ -1,13 +1,13 @@
 import "../CSS/Header.css"
-import { Link } from "react-router";
-import React from "react";
+import { Link } from "react-router-dom";
+
 
 function Header(){
     return(
         <header className="header">
             <nav>
                 <ul className="linksNAV">
-                    <li>teste</li>
+                    <li><Link to = "../homepage">homepage </Link> </li>
                 </ul>
             </nav>
         </header>
