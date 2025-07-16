@@ -1,7 +1,9 @@
 import React from "react";
+import Header from './Header'
 
 export default function DicasOficinas() {
   return (
+    <div> <Header />
     <div className="min-h-screen bg-white font-sans text-gray-900 flex flex-col justify-between">
       {/* Top nav */}
       <nav className="flex items-center justify-between px-8 py-4 border-b border-gray-300">
@@ -94,6 +96,7 @@ export default function DicasOficinas() {
         
         
       </footer>
+    </div>
     </div>
   );
 }
