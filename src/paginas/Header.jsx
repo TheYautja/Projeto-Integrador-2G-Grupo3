@@ -7,7 +7,7 @@ function Header(){
         <header className="header">
             <nav>
                 <ul className="linksNAV">
-                    <li><Link to = "../homepage">homepage </Link> </li>
+                    <li><Link to = "../Homepage">homepage </Link> </li>
                     <li> <Link to = "../ProdutoIndividual">produto individual </Link> </li>
                 </ul>
             </nav>
