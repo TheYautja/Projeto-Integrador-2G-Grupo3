@@ -1,8 +1,4 @@
 import React from "react";
-import { FaHammer, FaLeaf, FaUser } from "react-icons/fa";
-import { IoMdHome } from "react-icons/io";
-import { MdOutlineLightbulb } from "react-icons/md";
-import { FiSearch } from "react-icons/fi";
 
 export default function DicasOficinas() {
   return (
