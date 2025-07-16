@@ -6,15 +6,15 @@ export default function DicasOficinas() {
       {/* Top nav */}
       <nav className="flex items-center justify-between px-8 py-4 border-b border-gray-300">
         <div className="flex gap-10 items-center text-sm font-semibold">
-          <IoMdHome className="text-xl" />
+          
           <span>MENU</span>
           <span>PRODUTOS</span>
           <span>VENDER</span> {/* ← CORRIGIDO AQUI */}
           <span>DICAS E OFICINAS</span>
         </div>
         <div className="flex items-center gap-5">
-          <FiSearch className="text-xl" />
-          <FaUser className="text-xl" />
+          
+          
         </div>
       </nav>
 
@@ -26,12 +26,12 @@ export default function DicasOficinas() {
 
           <div className="space-y-3 text-base">
             <p className="flex items-center gap-2">
-              <FaHammer className="text-gray-600" />
+              
               oficina em destaque:&nbsp;
               <span className="font-bold text-green-800">“Restauração de madeira”</span>
             </p>
             <p className="flex items-center gap-2">
-              <MdOutlineLightbulb className="text-yellow-500" />
+            
               dica criativa:&nbsp;
               <span className="font-bold text-green-800">“Roupa tie-dye com sobras de tecido”</span>
             </p>
@@ -91,8 +91,8 @@ export default function DicasOficinas() {
 
       {/* Rodapé fixo */}
       <footer className="w-full bg-white border-t border-gray-300 px-10 py-3 flex justify-between items-center">
-        <FaLeaf className="text-green-700 text-xl" />
-        <FaUser className="text-gray-700 text-xl" />
+        
+        
       </footer>
     </div>
   );
