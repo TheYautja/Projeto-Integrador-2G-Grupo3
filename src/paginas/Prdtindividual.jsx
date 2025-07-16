@@ -24,7 +24,7 @@ function Prdtindividual() {
           />
           <div className="flex gap-2 mt-4">
             <img
-              src="/iphone12.jpg"
+              src="/iphone121.png"
               alt="thumb1"
               className="w-1/3 rounded-xl cursor-pointer hover:scale-105 transition"
               onClick={changeImage}
