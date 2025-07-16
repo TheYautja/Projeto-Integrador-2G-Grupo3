@@ -1,12 +1,16 @@
-import {Routes , Route} from "react-router-dom";
+import {Routes , Route, BrowserRouter} from "react-router-dom";
 import './App.css'
 import Homepage from './paginas/Homepage'
+import ProdutoIndividual from "./paginas/ProdutoIndividual";
 
 function App (){
   return(
-    <Routes>
-      <Route path="./src/paginas/Homepage.jsx" element={<Homepage />} />
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/produto" element={<ProdutoIndividual />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
