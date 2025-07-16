@@ -18,25 +18,25 @@ function ProdutoIndividual() {
         <section className="flex-1 min-w-[300px]">
           <img
             id="mainImage"
-            src="/images/iphone-principal.png"
+            src="/iphone12.jpg"
             alt="iPhone 12 Verde"
             className="w-full rounded-2xl shadow-md"
           />
           <div className="flex gap-2 mt-4">
             <img
-              src="/iphone12.jpg"
+              src="/iphone121.png"
               alt="thumb1"
               className="w-1/3 rounded-xl cursor-pointer hover:scale-105 transition"
               onClick={changeImage}
             />
             <img
-              src="/images/thumb2.png"
+              src="/iphone122.png"
               alt="thumb2"
               className="w-1/3 rounded-xl cursor-pointer hover:scale-105 transition"
               onClick={changeImage}
             />
             <img
-              src="/images/thumb3.png"
+              src="/iphone123.png"
               alt="thumb3"
               className="w-1/3 rounded-xl cursor-pointer hover:scale-105 transition"
               onClick={changeImage}
