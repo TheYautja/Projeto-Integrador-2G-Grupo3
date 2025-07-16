@@ -1,6 +1,6 @@
 import Header from './Header';
 
-function Prdtindividual() {
+function ProdutoIndividual() {
   function changeImage(event) {
     const mainImage = document.getElementById('mainImage');
     mainImage.src = event.target.src;
@@ -85,4 +85,4 @@ function Prdtindividual() {
   );
 }
 
-export default Prdtindividual;
+export default ProdutoIndividual;

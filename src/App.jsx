@@ -1,12 +1,17 @@
+import {Routes , Route, BrowserRouter} from "react-router-dom";
 import './App.css'
 import Homepage from './paginas/Homepage'
+import ProdutoIndividual from "./paginas/ProdutoIndividual";
 
 function App (){
   return(
-      <div>
-        <Homepage />
-      </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/produto" element={<ProdutoIndividual />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
-export default App
+export default App;
