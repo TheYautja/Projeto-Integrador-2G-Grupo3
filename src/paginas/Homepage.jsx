@@ -6,7 +6,7 @@ function Homepage (){
             <Header />
             <p>teste</p>
         </div>
-    )
+    );
 }
 
 export default Homepage;
