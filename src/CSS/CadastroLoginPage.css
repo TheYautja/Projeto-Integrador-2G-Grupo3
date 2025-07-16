@@ -1,154 +1,101 @@
-/* CadastroLoginPage.css */
+/* Carrinho */
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-}
-
-body {
-  background-color: #fff;
-  color: #234c24;
-}
-
-.container {
+.produto-carrinho {
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* Header */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #234c24;
-  padding: 10px 20px;
-}
-
-.logo {
-  height: 40px;
-}
-
-.nav {
-  display: flex;
-  gap: 20px;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #234c24;
-  font-weight: bold;
-  font-size: 12px;
-}
-
-.nav a.active {
-  border-bottom: 2px solid #234c24;
-}
-
-.icons img {
-  height: 24px;
-  margin-left: 15px;
-}
-
-/* Main forms */
-.main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 30px 20px;
-}
-
-.form-section {
-  width: 100%;
-  max-width: 400px;
-  margin-bottom: 40px;
-}
-
-.form-section h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #234c24;
-}
-
-.form {
-  border: 2px solid #234c24;
-  border-radius: 20px;
-  padding: 30px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.form-icon img {
-  width: 50px;
-  margin-bottom: 20px;
-}
-
-.form label {
-  align-self: flex-start;
-  margin-bottom: 5px;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.form input {
-  width: 100%;
-  padding: 8px 10px;
-  margin-bottom: 15px;
+  align-items: flex-start;
   border: 1px solid #234c24;
-  border-radius: 2px;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  gap: 15px;
+  background-color: #fff;
+  width: 100%;
+  max-width: 700px;
 }
 
-.form button {
-  background-color: #038c3e;
-  color: white;
-  border: none;
-  padding: 8px 20px;
-  cursor: pointer;
-  font-size: 14px;
-  border-radius: 2px;
+.checkbox-produto {
+  margin-top: 1rem;
+  accent-color: #234c24;
+}
+
+.imagem-produto {
+  width: 130px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.info-produto {
+  flex: 1;
+}
+
+.titulo-produto {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #234c24;
+  font-size: 16px;
+}
+
+.preco {
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.impacto {
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.revisao {
+  font-size: 12px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.acoes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-top: 10px;
 }
 
-.form button:hover {
+.btn-comprar {
+  background-color: #038c3e;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.btn-comprar:hover {
   background-color: #027433;
 }
 
-/* Footer */
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid #234c24;
-  padding: 10px 20px;
+.quantidade {
+  border: 1px solid #234c24;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
-.footer img {
-  height: 24px;
-}
-
-/* Responsivo */
 @media (max-width: 500px) {
-  .nav {
-    gap: 10px;
+  .produto-carrinho {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .nav a {
-    font-size: 10px;
+  .imagem-produto {
+    width: 100%;
+    max-width: 200px;
   }
 
-  .form-section h2 {
-    font-size: 20px;
+  .info-produto {
+    text-align: center;
   }
 
-  .form {
-    padding: 20px 10px;
-  }
-
-  .form-icon img {
-    width: 40px;
+  .acoes {
+    justify-content: center;
   }
 }
