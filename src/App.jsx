@@ -6,13 +6,15 @@ import Dicaseoficinas from './paginas/Dicaseoficinas';
 
 function App (){
   return(
+
     <BrowserRouter>
-      <Routes>
-        <Route path="/Homepage" element={<Homepage />} />
-        <Route path="/ProdutoIndividual" element={<ProdutoIndividual />} />
-        <Route path="/Dicaseoficinas" element={<Dicaseoficinas />} />
-      </Routes>
-    </BrowserRouter>
+         <Routes>
+           <Route path="/" element={<Homepage />} />
+           <Route path="/ProdutoIndividual" element={<ProdutoIndividual />} />
+           <Route path="/Dicaseoficinas" element={<Dicaseoficinas />} />
+         </Routes>
+       </BrowserRouter>
+
   )
 }
 
