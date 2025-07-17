@@ -1,4 +1,4 @@
-import './ProdutoCarrinho.css';
+
 
 function ProdutoCarrinho({ imagem, nome, preco, impacto, ultimaRevisao }) {
   return (

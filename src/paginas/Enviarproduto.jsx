@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Header from './Header';
+
 
 export default function FormularioVenda() {
   const [produto, setProduto] = useState({
@@ -26,6 +28,8 @@ export default function FormularioVenda() {
   };
 
   return (
+    <div>
+      <Header />
     <form
       onSubmit={handleSubmit}
       style={{
@@ -132,5 +136,6 @@ export default function FormularioVenda() {
         Anunciar Produto
       </button>
     </form>
+    </div>
   );
 }

@@ -1,44 +1,17 @@
 import React from 'react';
-import './CSS/catalogo_de_produtos.css';
+import '../CSS/catalogo_de_produtos.css';
+import Header from './Header';
 
 function CatalogoDeProdutos() {
   return (
     <div>
-      <Navigation />
+      <Header />
+
       <main>
         <h1>Produtos</h1>
-        <SearchBar />
         <Filters />
         <ProductList />
       </main>
-      <Footer />
-    </div>
-  );
-}
-
-function Navigation() {
-  return (
-    <nav className="navigation">
-      <span className="logo">LOGO</span>
-      <ul>
-        <li>INÍCIO</li>
-        <li>PRODUTOS</li>
-        <li>VENDER</li>
-        <li>DICAS E OFICINAS</li>
-      </ul>
-      <div className="icons">
-        <span className="cart-icon">🛒</span>
-        <span className="user-icon">👤</span>
-      </div>
-    </nav>
-  );
-}
-
-function SearchBar() {
-  return (
-    <div className="search-bar">
-      <input type="text" placeholder="nome, tipo, cidade..." />
-      <button aria-label="Pesquisar">🔍</button>
     </div>
   );
 }
@@ -93,17 +66,7 @@ function ProductCard({ imageUrl, title, price, impact, description, info }) {
         <button className="buy-btn">Comprar</button>
       </div>
     </div>
-  );
-}
+  )}
 
-function Footer() {
-  return (
-    <footer>
-      <span className="footer-icon">🌱</span>
-      <span className="footer-icon">🏠</span>
-      <span className="footer-icon">👤</span>
-    </footer>
-  );
-}
 
 export default CatalogoDeProdutos;

@@ -1,29 +1,28 @@
-import estante from '../assets/estante.png';
-import iphone from '../assets/iphone.png';
-import ipad from '../assets/ipad.png';
+import Header from "./Header"
+
 
 function Carrinho() {
   return (
     <div className="container">
+      <Header />
       <main className="main">
         <h2 className="form-section">Meu carrinho</h2>
 
         <ProdutoCarrinho
-          imagem={estante}
+
           nome="Estante de madeira"
           preco="60,00"
           impacto="10–200 kg CO₂ | Equivalente à produção de 200 copos plásticos descartáveis"
           ultimaRevisao="20 dias atrás"
         />
         <ProdutoCarrinho
-          imagem={iphone}
+
           nome="iPhone 12 Apple Verde 64GB"
           preco="1500,00"
           impacto="70–100 kg CO₂ | Equivalente à produção de 400 copos plásticos descartáveis"
           ultimaRevisao="2 meses atrás"
         />
         <ProdutoCarrinho
-          imagem={ipad}
           nome="Apple iPad 10 de 10,9 polegadas (64GB + Wi-Fi) – Prata"
           preco="1785,50"
           impacto="100–150 kg CO₂ | Equivalente à produção de 200 copos plásticos descartáveis"

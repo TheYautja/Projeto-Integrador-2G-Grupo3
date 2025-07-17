@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './CadastroLoginPage.css';
-import './CSS/CadastroLoginPage.css';
+import Header from './Header'
+import '../CSS/CadastroLoginPage.css';
 
 function CadastroPage() {
   const [cadastro, setCadastro] = useState({
@@ -37,20 +37,10 @@ function CadastroPage() {
   };
 
   return (
+    <div>
+      <Header />
     <div className="container">
-      <header className="header">
-        <img src="/logo.svg" alt="Logo" className="logo" />
-        <nav className="nav">
-          <a href="#" className="active">INÍCIO</a>
-          <a href="#">PRODUTOS</a>
-          <a href="#">VENDER</a>
-          <a href="#">DICAS E OFICINAS</a>
-        </nav>
-        <div className="icons">
-          <img src="/cart.svg" alt="Carrinho" />
-          <img src="/profile.svg" alt="Perfil" />
-        </div>
-      </header>
+      
 
       <main className="main">
         <section className="form-section">
@@ -86,6 +76,7 @@ function CadastroPage() {
         <img src="/instagram.svg" alt="Instagram" />
         <img src="/profile.svg" alt="Perfil" />
       </footer>
+    </div>
     </div>
   );
 }
