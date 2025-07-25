@@ -2,7 +2,7 @@ import Header from './Header';
 
 function ProdutoIndividual() {
   function changeImage(event) {
-    const mainImage = document.getElementById('mainImage');
+    const mainImage = document.getElementById('mainnpmImage');
     mainImage.src = event.target.src;
   }
 

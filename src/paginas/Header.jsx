@@ -7,7 +7,6 @@ function Header(){
         <header className="header">
             <nav>
                 <ul className="linksNAV">
-                    <li> <Link to = "../ProdutoIndividual">produto individual </Link> </li>
                     <li> <Link to = "../Dicaseoficinas">Dicas e Oficinas</Link> </li>
                     <li> <Link to = "../Catalogo_de_produtos">Catalogo</Link> </li>
                     <li> <Link to = "../Enviarproduto">enviar produto</Link> </li>
