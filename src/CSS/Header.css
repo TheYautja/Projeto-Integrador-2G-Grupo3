@@ -1,5 +1,5 @@
 .header {
-    background-color: #a4c991;
+    background-color: hsl(100, 34%, 68%);
     padding: 10px 20px;
     color: white;
 }
@@ -9,4 +9,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.linksNAV a:hover {
+    text-decoration: underline;
 }
