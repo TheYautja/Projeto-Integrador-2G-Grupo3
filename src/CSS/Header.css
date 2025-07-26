@@ -2,7 +2,11 @@
     background-color: #a4c991;
     padding: 10px 20px;
     color: white;
+}
+
+.linksNAV {
+    list-style: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
