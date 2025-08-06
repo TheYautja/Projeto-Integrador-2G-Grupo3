@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Dicaseoficina() {
   return (
-    <div className="bg-white font-sans text-[#003311] min-h-screen">
+    <div className="bg-white font-sans text-[#003311] min-h-screen flex flex-col">
       {/* Menu superior */}
       <header className="flex items-center justify-between px-6 py-4 border-b border-gray-300">
         <div className="flex items-center gap-14 text-sm font-semibold">
@@ -25,11 +25,11 @@ export default function Dicaseoficina() {
       </header>
 
       {/* Conteúdo */}
-      <main className="px-6 py-8">
-        <h2 className="text-xl font-bold text-[#003311] mb-6">Dicas e oficinas</h2>
+      <main className="flex-grow px-6 py-10 max-w-[1000px] mx-auto space-y-10">
+        <h2 className="text-2xl font-bold text-[#003311]">Dicas e oficinas</h2>
 
-        <div className="mb-10 text-[#003311]">
-          <p className="mb-2">
+        <div className="text-[#003311] space-y-2">
+          <p>
             <span className="mr-2">🪚</span>
             oficina em destaque: <span className="font-bold">“Restauração de madeira”</span>
           </p>
@@ -40,7 +40,7 @@ export default function Dicaseoficina() {
         </div>
 
         {/* Agenda com argolas */}
-        <div className="flex items-start mb-10">
+        <div className="flex items-start">
           {/* Argolas */}
           <div className="flex flex-col gap-4 mt-2 mr-2">
             {Array(6).fill().map((_, i) => (
@@ -48,9 +48,9 @@ export default function Dicaseoficina() {
             ))}
           </div>
 
-          {/* Bloco de agenda */}
-          <div className="border-2 border-[#003311] p-6">
-            <h3 className="text-[#003311] font-bold mb-4 text-base">Agenda de oficinas</h3>
+          {/* Bloco da agenda */}
+          <div className="border-2 border-[#003311] p-6 bg-white shadow-md rounded-md">
+            <h3 className="text-base font-bold text-[#003311] mb-4">Agenda de oficinas</h3>
             <ul className="text-sm text-[#003311] underline leading-7">
               <li><a href="#">05/07 - Oficina de Móveis (Concórdia - SC)</a></li>
               <li><a href="#">08/07 - Oficina de Costura (Online)</a></li>
@@ -61,10 +61,10 @@ export default function Dicaseoficina() {
 
         {/* Vídeos */}
         <div>
-          <h3 className="text-[#003311] font-bold text-base mb-4">Vídeos</h3>
+          <h3 className="text-base font-bold text-[#003311] mb-4">Vídeos</h3>
           <ul className="space-y-4 text-sm text-[#003311]">
             <li className="flex items-center gap-2">
-              <span className="w-6 h-6 flex items-center justify-center border-2 border-[#003311] rounded-sm">
+              <span className="w-5 h-5 flex items-center justify-center border-2 border-[#003311] rounded-sm">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
                   <rect x="4" y="4" width="16" height="16" stroke="#003311" strokeWidth="2" />
                 </svg>
@@ -72,7 +72,7 @@ export default function Dicaseoficina() {
               Restaurando uma camisa que não uso mais
             </li>
             <li className="flex items-center gap-2">
-              <span className="w-6 h-6 flex items-center justify-center border-2 border-[#003311] rounded-sm">
+              <span className="w-5 h-5 flex items-center justify-center border-2 border-[#003311] rounded-sm">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
                   <rect x="4" y="4" width="16" height="16" stroke="#003311" strokeWidth="2" />
                 </svg>
@@ -91,3 +91,4 @@ export default function Dicaseoficina() {
     </div>
   );
 }
+
