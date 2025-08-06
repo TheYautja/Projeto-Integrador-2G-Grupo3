@@ -13,8 +13,12 @@ function EnviarProduto() {
     foto_url: ""
   });
 
+
+
   const [produtos, setProdutos] = useState([]);
   const [editId, setEditId] = useState(null);
+
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,6 +27,8 @@ function EnviarProduto() {
       [name]: value
     }));
   };
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,27 +48,33 @@ function EnviarProduto() {
       });
       fetchProdutos();
     } catch (error) {
-      console.error("Erro ao enviar produto:", error);
+      console.error("deu pau no envio", error);
     }
   };
+
+
 
   const fetchProdutos = async () => {
     try {
       const res = await axios.get(`${url}/produtos`);
       setProdutos(res.data.produto);
     } catch (error) {
-      console.error("Erro ao buscar produtos:", error);
+      console.error("deu pau no fetch", error);
     }
   };
+
+
 
   const handleDelete = async (id) => {
     try {
       await axios.delete(`${url}/produtos/${id}`);
       fetchProdutos();
     } catch (error) {
-      console.error("Erro ao deletar produto:", error);
+      console.error("Deu pau no delete", error);
     }
   };
+
+
 
   const handleEdit = (produto) => {
     setFormData(produto);
@@ -74,6 +86,8 @@ function EnviarProduto() {
     fetchProdutos();
   }, []);
 
+
+  
   return (
     <div>
       <Header />
@@ -116,7 +130,7 @@ function EnviarProduto() {
       <ul>
         {produtos.map(produto => (
           <li key={produto.id}>
-            <strong>{produto.nome}</strong> - R${produto.preco} <br />
+            {produto.nome} - R${produto.preco} <br />
             {produto.descricao} <br />
             Quantia: {produto.quantia} <br />
             <img src={produto.foto_url} alt={produto.nome} width="100" /><br />

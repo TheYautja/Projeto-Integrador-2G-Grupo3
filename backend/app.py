@@ -34,9 +34,13 @@ def formatar_produto(produto):
         "foto_url": produto.foto_url
     }
 
+
+
 @app.route("/", methods=["GET"])
 def teste():
-    return "<h1>API is working</h1>"
+    return "<h1>deu boa</h1>"
+
+
 
 @app.route("/produtos", methods=["POST"])
 def cadastrar():
@@ -52,16 +56,23 @@ def cadastrar():
     db.session.commit()
     return jsonify(formatar_produto(produto)), 201
 
+
+
+
 @app.route("/produtos", methods=["GET"])
 def pegar_todos():
     produtos = Produto.query.all()
     lista = [formatar_produto(p) for p in produtos]
     return jsonify({"produto": lista})
 
+
+
 @app.route("/produtos/<int:id>", methods=["GET"])
 def pegar_um(id):
     produto = Produto.query.get_or_404(id)
     return jsonify({"produto": formatar_produto(produto)})
+
+
 
 @app.route("/produtos/<int:id>", methods=["DELETE"])
 def deletar(id):
@@ -69,6 +80,8 @@ def deletar(id):
     db.session.delete(produto)
     db.session.commit()
     return jsonify({"message": "Produto deletado"}), 200
+
+
 
 @app.route("/produtos/<int:id>", methods=["PUT"])
 def modificar(id):
@@ -81,6 +94,9 @@ def modificar(id):
     produto.foto_url = data.get('foto_url', produto.foto_url)
     db.session.commit()
     return jsonify({"produto": formatar_produto(produto)})
+
+
+
 
 if __name__ == "__main__":
     app.run()
