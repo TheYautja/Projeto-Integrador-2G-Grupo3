@@ -28,7 +28,7 @@ export default function CadastroPage() {
       <main className="center">
         <section className="card">
           <div className="avatarWrap">
-            <img className="avatar" src="/user.svg" alt="Usuário" />
+            <img className="avatar" src="/assests/icon.png" alt="Usuário" />
             <img className="avatarPlus" src="/add-circle.svg" alt="Adicionar" />
           </div>
 
