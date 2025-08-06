@@ -10,7 +10,7 @@ export default function CadastroPage() {
     cpf: '',
     senha: ''
   });
-k
+
   const handleCadastroChange = (e) => {
     const { name, value } = e.target;
     setCadastro({ ...cadastro, [name]: value });
