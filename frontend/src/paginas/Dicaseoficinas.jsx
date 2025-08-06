@@ -39,7 +39,7 @@ export default function Dicaseoficina() {
           </p>
         </div>
 
-        {/* Agenda de oficinas com argolas */}
+        {/* Agenda com argolas */}
         <div className="flex items-start mb-10">
           {/* Argolas */}
           <div className="flex flex-col gap-4 mt-2 mr-2">
@@ -83,7 +83,7 @@ export default function Dicaseoficina() {
         </div>
       </main>
 
-      {/* Rodapé com ícones */}
+      {/* Rodapé */}
       <footer className="flex justify-between items-center px-6 py-4 border-t border-gray-300 mt-10">
         <img src="/icone-folha.svg" alt="folha" className="w-6 h-6" />
         <img src="/icone-perfil.svg" alt="perfil" className="w-6 h-6" />
