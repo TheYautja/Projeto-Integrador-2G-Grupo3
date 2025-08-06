@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Header from './Header'
+import Header from './Header';
 import '../CSS/CadastroLoginPage.css';
 
-function CadastroPage() {
+export default function CadastroPage() {
   const [cadastro, setCadastro] = useState({
     nome: '',
     localizacao: '',
@@ -11,19 +11,9 @@ function CadastroPage() {
     senha: ''
   });
 
-  const [login, setLogin] = useState({
-    email: '',
-    senha: ''
-  });
-
   const handleCadastroChange = (e) => {
     const { name, value } = e.target;
     setCadastro({ ...cadastro, [name]: value });
-  };
-
-  const handleLoginChange = (e) => {
-    const { name, value } = e.target;
-    setLogin({ ...login, [name]: value });
   };
 
   const handleCadastroSubmit = (e) => {
@@ -31,54 +21,69 @@ function CadastroPage() {
     console.log('Cadastro realizado:', cadastro);
   };
 
-  const handleLoginSubmit = (e) => {
-    e.preventDefault();
-    console.log('Login realizado:', login);
-  };
-
   return (
-    <div>
+    <div className="page">
       <Header />
-    <div className="container">
-      
 
-      <main className="main">
-        <section className="form-section">
-          <h2>Cadastro</h2>
+      <main className="center">
+        <section className="card">
+          <div className="avatarWrap">
+            <img className="avatar" src="/user.svg" alt="Usuário" />
+            <img className="avatarPlus" src="/add-circle.svg" alt="Adicionar" />
+          </div>
+
+          <h2 className="title">Cadastro</h2>
+
           <form onSubmit={handleCadastroSubmit} className="form">
-            <div className="form-icon">
-              <img src="/user-add.svg" alt="Adicionar usuário" />
-            </div>
-            <input type="text" name="nome" placeholder="Nome completo:" value={cadastro.nome} onChange={handleCadastroChange} />
-            <input type="text" name="localizacao" placeholder="Localização:" value={cadastro.localizacao} onChange={handleCadastroChange} />
-            <input type="email" name="email" placeholder="E-mail:" value={cadastro.email} onChange={handleCadastroChange} />
-            <input type="text" name="cpf" placeholder="CPF:" value={cadastro.cpf} onChange={handleCadastroChange} />
-            <input type="password" name="senha" placeholder="Senha:" value={cadastro.senha} onChange={handleCadastroChange} />
-            <button type="submit">Cadastrar</button>
-          </form>
-        </section>
+            <label className="label">Nome completo:</label>
+            <input
+              className="input"
+              type="text"
+              name="nome"
+              value={cadastro.nome}
+              onChange={handleCadastroChange}
+            />
 
-        <section className="form-section">
-          <h2>Login</h2>
-          <form onSubmit={handleLoginSubmit} className="form">
-            <div className="form-icon">
-              <img src="/user-add.svg" alt="Usuário" />
-            </div>
-            <input type="email" name="email" placeholder="E-mail:" value={login.email} onChange={handleLoginChange} />
-            <input type="password" name="senha" placeholder="Senha:" value={login.senha} onChange={handleLoginChange} />
-            <button type="submit">Entrar</button>
+            <label className="label">Localização:</label>
+            <input
+              className="input"
+              type="text"
+              name="localizacao"
+              value={cadastro.localizacao}
+              onChange={handleCadastroChange}
+            />
+
+            <label className="label">E - Mail:</label>
+            <input
+              className="input"
+              type="email"
+              name="email"
+              value={cadastro.email}
+              onChange={handleCadastroChange}
+            />
+
+            <label className="label">CPF:</label>
+            <input
+              className="input"
+              type="text"
+              name="cpf"
+              value={cadastro.cpf}
+              onChange={handleCadastroChange}
+            />
+
+            <label className="label">Senha:</label>
+            <input
+              className="input"
+              type="password"
+              name="senha"
+              value={cadastro.senha}
+              onChange={handleCadastroChange}
+            />
+
+            <button type="submit" className="btnPrimary">Cadastrar</button>
           </form>
         </section>
       </main>
-
-      <footer className="footer">
-        <img src="/leaf.svg" alt="Ícone folha" />
-        <img src="/instagram.svg" alt="Instagram" />
-        <img src="/profile.svg" alt="Perfil" />
-      </footer>
-    </div>
     </div>
   );
 }
-
-export default CadastroPage;
