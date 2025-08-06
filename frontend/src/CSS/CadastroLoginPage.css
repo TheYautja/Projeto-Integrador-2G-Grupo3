@@ -12,15 +12,15 @@ body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial
   padding: 24px;
 }
 
-/* Card principal (bordas arredondadas grandes) */
+/* Card principal (menos alto e mais largo) */
 .card {
   width: 100%;
-  max-width: 720px;            /* largura parecida com o mock */
+  max-width: 500px;           /* mais comprido horizontalmente */
   background: #fff;
-  border-radius: 24px;         /* cantos bem arredondados */
-  border: 2px solid #2e6f30;   /* roxo fino como na moldura do mock (ajuste se quiser) */
-  box-shadow: 0 12px 24px rgba(0,0,0,0.06);
-  padding: 28px 24px 40px;
+  border-radius: 20px;
+  border: 2px solid #4a2ca0;  /* roxo fino */
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+  padding: 20px 30px;         /* menos altura, mais largura interna */
   position: relative;
 }
 
@@ -39,7 +39,7 @@ body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial
 }
 .avatarPlus {
   position: absolute;
-  right: calc(50% - 110px); /* encosta próximo ao ombro direito do avatar */
+  right: calc(50% - 110px);
   top: 40px;
   width: 34px;
   height: 34px;
@@ -60,23 +60,23 @@ body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial
   margin-top: 6px;
 }
 
-/* Rótulos com tipografia maior */
+/* Rótulos */
 .label {
   font-size: 18px;
   font-weight: 700;
-  color: #1f3b1f; /* verde escuro */
+  color: #1f3b1f;
   margin-left: 6px;
 }
 
-/* Inputs largos com borda verde */
+/* Inputs mais baixos */
 .input {
   width: 100%;
-  height: 52px;
-  border: 2px solid #2f6d2f;   /* verde da borda do mock */
+  height: 44px;               /* menor que antes (era 52px) */
+  border: 2px solid #2f6d2f;
   border-radius: 4px;
-  background: #f7f6f7;        /* preenchimento claro */
-  padding: 10px 14px;
-  font-size: 16px;
+  background: #f7f6f7;
+  padding: 8px 14px;          /* menos padding vertical */
+  font-size: 15px;
   outline: none;
 }
 .input:focus {
@@ -84,17 +84,17 @@ body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial
   box-shadow: 0 0 0 3px rgba(47,109,47,0.15);
 }
 
-/* Botão principal verde */
+/* Botão mais baixo */
 .btnPrimary {
   margin: 18px auto 0;
   display: block;
   width: 280px;
-  height: 52px;
+  height: 46px;               /* menor que antes (era 52px) */
   border: none;
   border-radius: 8px;
-  background: #018c50; /* verde do botão */
+  background: #018c50;
   color: #fff;
-  font-size: 20px;
+  font-size: 18px;            /* menor que antes (era 20px) */
   font-weight: 700;
   cursor: pointer;
   transition: transform .06s ease, filter .2s ease;
@@ -102,13 +102,11 @@ body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial
 .btnPrimary:hover { filter: brightness(1.05); }
 .btnPrimary:active { transform: translateY(1px); }
 
-/* --- Caso queira manter Login abaixo no futuro, reaproveite o mesmo card --- */
-
 /* Responsivo */
 @media (max-width: 560px) {
-  .card { padding: 22px 16px 28px; border-radius: 18px; }
+  .card { padding: 18px 16px; border-radius: 16px; }
   .title { font-size: 20px; }
-  .label { font-size: 17px; }
-  .input { height: 48px; }
-  .btnPrimary { width: 100%; }
+  .label { font-size: 16px; }
+  .input { height: 42px; font-size: 14px; }
+  .btnPrimary { width: 100%; height: 44px; font-size: 16px; }
 }
