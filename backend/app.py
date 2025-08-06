@@ -79,7 +79,7 @@ def deletar(id):
     produto = Produto.query.get_or_404(id)
     db.session.delete(produto)
     db.session.commit()
-    return jsonify({"message": "Produto deletado"}), 200
+    return jsonify({"message": "produto deletado"}), 200
 
 
 
@@ -87,11 +87,13 @@ def deletar(id):
 def modificar(id):
     produto = Produto.query.get_or_404(id)
     data = request.json
+
     produto.nome = data.get('nome', produto.nome)
     produto.preco = data.get('preco', produto.preco)
     produto.descricao = data.get('descricao', produto.descricao)
     produto.quantia = data.get('quantia', produto.quantia)
     produto.foto_url = data.get('foto_url', produto.foto_url)
+    
     db.session.commit()
     return jsonify({"produto": formatar_produto(produto)})
 
