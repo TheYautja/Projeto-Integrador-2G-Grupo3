@@ -81,32 +81,39 @@ function EnviarProduto() {
       <h2>{editId ? "Editar Produto" : "Cadastrar Produto"}</h2>
       <form onSubmit={handleSubmit}>
         <label>
-          Nome:
+          Nome do produto:
           <input type="text" name="nome" value={formData.nome} onChange={handleChange} required />
         </label>
 
         <label>
-          Preço:
+          Categoria:
           <input type="number" name="preco" value={formData.preco} onChange={handleChange} required />
         </label>
 
         <label>
-          Descrição:
+          Condição atual:
           <input type="text" name="descricao" value={formData.descricao} onChange={handleChange} required />
         </label>
 
         <label>
-          Quantia:
+          Preço sugerido:
           <input type="number" name="quantia" value={formData.quantia} onChange={handleChange} required />
         </label>
 
         <label>
-          Foto (URL):
+          Descrição:
+          <input type="text" name="foto_url" value={formData.foto_url} onChange={handleChange} required />
+        </label>
+
+        <label>
+          localização:
           <input type="text" name="foto_url" value={formData.foto_url} onChange={handleChange} required />
         </label>
 
         <button type="submit">{editId ? "Atualizar" : "Cadastrar"}</button>
       </form>
+
+      
 
       <h2>Produtos cadastrados:</h2>
       <ul>
