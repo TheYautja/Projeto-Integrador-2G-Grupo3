@@ -39,22 +39,29 @@ export default function Dicaseoficina() {
           </p>
         </div>
 
-        {/* Agenda com argolas */}
+        {/* Agenda com espiral */}
         <div className="flex items-start">
-          {/* Argolas */}
-          <div className="flex flex-col gap-4 mt-2 mr-2">
-            {Array(6).fill().map((_, i) => (
-              <div key={i} className="w-4 h-4 rounded-full border-4 border-gray-500"></div>
-            ))}
-          </div>
+          {/* Espiral única com furos */}
+          <div
+            className="w-4 h-4 rounded-full bg-gray-400 mt-6 mr-3"
+            style={{
+              boxShadow: `
+                0 28px 0 #9ca3af,
+                0 56px 0 #9ca3af,
+                0 84px 0 #9ca3af,
+                0 112px 0 #9ca3af,
+                0 140px 0 #9ca3af
+              `
+            }}
+          ></div>
 
           {/* Bloco da agenda */}
-          <div className="border-2 border-[#003311] p-6 bg-white shadow-md rounded-md">
+          <div className="border-2 border-[#003311] p-6 bg-white shadow-md">
             <h3 className="text-base font-bold text-[#003311] mb-4">Agenda de oficinas</h3>
             <ul className="text-sm text-[#003311] underline leading-7">
-              <li><a href="#">05/07 - Oficina de Móveis (Concórdia - SC)</a></li>
-              <li><a href="#">08/07 - Oficina de Costura (Online)</a></li>
-              <li><a href="#">15/08 - Oficina de Brinquedo (Capinzal - SC)</a></li>
+              <li><a href="https://example.com/moveis">05/07 - Oficina de Móveis (Concórdia - SC)</a></li>
+              <li><a href="https://example.com/costura">08/07 - Oficina de Costura (Online)</a></li>
+              <li><a href="https://example.com/brinquedo">15/08 - Oficina de Brinquedo (Capinzal - SC)</a></li>
             </ul>
           </div>
         </div>
@@ -64,20 +71,18 @@ export default function Dicaseoficina() {
           <h3 className="text-base font-bold text-[#003311] mb-4">Vídeos</h3>
           <ul className="space-y-4 text-sm text-[#003311]">
             <li className="flex items-center gap-2">
-              <span className="w-5 h-5 flex items-center justify-center border-2 border-[#003311] rounded-sm">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
-                  <rect x="4" y="4" width="16" height="16" stroke="#003311" strokeWidth="2" />
-                </svg>
-              </span>
-              Restaurando uma camisa que não uso mais
+              {/* Ícone câmera */}
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="#003311">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5l4.5-3v9l-4.5-3m-2.25 3H5.25A2.25 2.25 0 013 14.25v-4.5A2.25 2.25 0 015.25 7.5h8.25a2.25 2.25 0 012.25 2.25v4.5a2.25 2.25 0 01-2.25 2.25z" />
+              </svg>
+              <a href="https://example.com/video1">Restaurando uma camisa que não uso mais</a>
             </li>
             <li className="flex items-center gap-2">
-              <span className="w-5 h-5 flex items-center justify-center border-2 border-[#003311] rounded-sm">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
-                  <rect x="4" y="4" width="16" height="16" stroke="#003311" strokeWidth="2" />
-                </svg>
-              </span>
-              Restaurando minha estante
+              {/* Ícone câmera */}
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="#003311">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5l4.5-3v9l-4.5-3m-2.25 3H5.25A2.25 2.25 0 013 14.25v-4.5A2.25 2.25 0 015.25 7.5h8.25a2.25 2.25 0 012.25 2.25v4.5a2.25 2.25 0 01-2.25 2.25z" />
+              </svg>
+              <a href="https://example.com/video2">Restaurando minha estante</a>
             </li>
           </ul>
         </div>
