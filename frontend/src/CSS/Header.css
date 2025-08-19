@@ -3,37 +3,32 @@
     padding: 10px 20px;
     border-bottom: 1px solid #ccc;
     font-family: 'LazyDog', sans-serif;
-}
 
+}
 
 .linksNAV {
     list-style: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
 }
 
 
 
 .linksNAV a {
-    color: #115f24;
+    color: #336342;
     font-weight: bold;
     font-size: 14px;
-    text-decoration: none;
-    padding: 5px 8px;
-    background: none;
 }
 
 .linksNAV a:hover {
-    text-decoration: underline;
+    border-bottom: 2px solid #336342;
 }
-
-
 
 .logo img {
     height: 40px;
 }
-
 
 .icone {
     display: flex;
