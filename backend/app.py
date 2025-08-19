@@ -38,7 +38,7 @@ def formatar_produto(produto):
 
 @app.route("/", methods=["GET"])
 def teste():
-    return "<h1>deu boa</h1>"
+    return "<h1>deu boa </h1>"
 
 
 
