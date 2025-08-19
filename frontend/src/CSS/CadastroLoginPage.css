@@ -1,112 +1,89 @@
-/* Reset simples */
-* { box-sizing: border-box; }
-html, body, #root { height: 100%; }
-body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: #1e1e1e; }
-
-/* Página */
-.page { background: #ffffff; }
-.center {
-  min-height: calc(100vh - 80px); /* ajusta se o Header for maior/menor */
-  display: grid;
-  place-items: center;
-  padding: 24px;
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
-/* Card principal (menos alto e mais largo) */
-.card {
-  width: 100%;
-  max-width: 500px;           /* mais comprido horizontalmente */
-  background: #fff;
-  border-radius: 20px;
-  border: 2px solid #2e6f30;  /* roxo fino */
-  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
-  padding: 20px 30px;         /* menos altura, mais largura interna */
-  position: relative;
-}
-
-/* Avatar e ícone de plus sobreposto */
-.avatarWrap {
-  display: grid;
-  place-items: center;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  position: relative;
-}
-.avatar {
-  width: 88px;
-  height: 88px;
-  opacity: 0.9;
-}
-.avatarPlus {
-  position: absolute;
-  right: calc(50% - 110px);
-  top: 40px;
-  width: 34px;
-  height: 34px;
-}
-
-/* Título */
-.title {
-  text-align: left;
+.titulo {
   font-size: 22px;
-  font-weight: 700;
-  margin: 8px 6px 10px;
+  font-weight: bold;
+  color: #134d2e; /* Verde escuro */
+  align-self: flex-start;
+  margin-left: 50px;
 }
 
-/* Formulário */
-.form {
-  display: grid;
-  gap: 12px;
-  margin-top: 6px;
+.card {
+  border: 2px solid #134d2e;
+  border-radius: 10px;
+  padding: 20px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
 }
 
-/* Rótulos */
-.label {
-  font-size: 18px;
-  font-weight: 700;
-  color: #1f3b1f;
-  margin-left: 6px;
+.icone-usuario {
+  position: relative;
+  margin-bottom: 15px;
 }
 
-/* Inputs mais baixos */
-.input {
+.icone {
+  width: 50px;
+  height: 50px;
+  background: #134d2e;
+  border-radius: 50%;
+}
+
+.plus {
+  position: absolute;
+  right: -5px;
+  bottom: -2px;
+  background: white;
+  border: 2px solid #134d2e;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #134d2e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   width: 100%;
-  height: 44px;               /* menor que antes (era 52px) */
-  border: 2px solid #2f6d2f;
-  border-radius: 4px;
-  background: #f7f6f7;
-  padding: 8px 14px;          /* menos padding vertical */
-  font-size: 15px;
+}
+
+.formulario label {
+  font-size: 14px;
+  margin-bottom: -5px;
+  color: black;
+}
+
+.formulario input {
+  border: 1px solid #134d2e;
+  padding: 4px;
+  font-size: 14px;
   outline: none;
 }
-.input:focus {
-  border-color: #1f5b1f;
-  box-shadow: 0 0 0 3px rgba(47,109,47,0.15);
-}
 
-/* Botão mais baixo */
-.btnPrimary {
-  margin: 18px auto 0;
-  display: block;
-  width: 280px;
-  height: 46px;               /* menor que antes (era 52px) */
+.botao {
+  background: #008c45; /* Verde botão */
+  color: white;
   border: none;
-  border-radius: 8px;
-  background: #018c50;
-  color: #fff;
-  font-size: 18px;            /* menor que antes (era 20px) */
-  font-weight: 700;
+  padding: 6px;
+  margin-top: 10px;
   cursor: pointer;
-  transition: transform .06s ease, filter .2s ease;
-}
-.btnPrimary:hover { filter: brightness(1.05); }
-.btnPrimary:active { transform: translateY(1px); }
-
-/* Responsivo */
-@media (max-width: 560px) {
-  .card { padding: 18px 16px; border-radius: 16px; }
-  .title { font-size: 20px; }
-  .label { font-size: 16px; }
-  .input { height: 42px; font-size: 14px; }
-  .btnPrimary { width: 100%; height: 44px; font-size: 16px; }
+  font-weight: bold;
+  font-size: 14px;
+  width: 100px;
+  align-self: center;
 }
