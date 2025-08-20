@@ -1,94 +1,56 @@
-import React from "react";
-import Header from "../Header";
+import React from 'react';
+import '../CSS/CadastroLoginPage.css';
+import Header from './Header';
 
 export default function CadastroLoginPage() {
   return (
-    <div className="flex flex-col items-start px-16 py-6">
+    <div className="page-container">
       <Header />
 
       {/* Cadastro */}
-      <h2 className="text-green-900 font-bold mt-6 mb-2 text-lg">Cadastro</h2>
-      <div className="border border-green-900 rounded-lg p-6 w-96 mb-10">
-        <div className="flex justify-center items-center relative mb-4">
-          <div className="w-14 h-14 bg-gray-300 rounded-full"></div>
-          <div className="absolute bottom-0 right-[140px] bg-white border-2 border-green-900 rounded-full px-2 text-green-900 font-bold">
-            +
-          </div>
+      <h2 className="section-title">Cadastro</h2>
+      <div className="form-box">
+        <div className="icon-container">
+          <div className="icon-user"></div>
+          <div className="icon-plus">+</div>
         </div>
 
-        <form className="flex flex-col gap-2">
-          <label className="text-sm font-medium">Nome completo:</label>
-          <input
-            type="text"
-            className="border border-gray-400 rounded p-1"
-          />
+        <form className="form-content">
+          <label>Nome completo:</label>
+          <input type="text" />
 
-          <label className="text-sm font-medium">Localização:</label>
-          <input
-            type="text"
-            className="border border-gray-400 rounded p-1"
-          />
+          <label>Localização:</label>
+          <input type="text" />
 
-          <label className="text-sm font-medium">E-mail:</label>
-          <input
-            type="email"
-            className="border border-gray-400 rounded p-1"
-          />
+          <label>E-mail:</label>
+          <input type="email" />
 
-          <label className="text-sm font-medium">CPF:</label>
-          <input
-            type="text"
-            className="border border-gray-400 rounded p-1"
-          />
+          <label>CPF:</label>
+          <input type="text" />
 
-          <label className="text-sm font-medium">Senha:</label>
-          <input
-            type="password"
-            className="border border-gray-400 rounded p-1"
-          />
+          <label>Senha:</label>
+          <input type="password" />
 
-          <div className="flex justify-center mt-4">
-            <button
-              type="submit"
-              className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded"
-            >
-              Cadastrar
-            </button>
-          </div>
+          <button type="submit" className="btn">Cadastrar</button>
         </form>
       </div>
 
       {/* Login */}
-      <h2 className="text-green-900 font-bold mt-6 mb-2 text-lg">Login</h2>
-      <div className="border border-green-900 rounded-lg p-6 w-96 mb-10">
-        <div className="flex justify-center items-center relative mb-4">
-          <div className="w-14 h-14 bg-gray-300 rounded-full"></div>
-          <div className="absolute bottom-0 right-[140px] bg-white border-2 border-green-900 rounded-full px-2 text-green-900 font-bold">
-            +
-          </div>
+      <h2 className="section-title">Login</h2>
+      <div className="form-box">
+        <div className="icon-container">
+          <div className="icon-user"></div>
+          <div className="icon-plus">+</div>
         </div>
 
-        <form className="flex flex-col gap-2">
-          <label className="text-sm font-medium">E-mail:</label>
-          <input
-            type="email"
-            className="border border-gray-400 rounded p-1"
-          />
+        <form className="form-content">
+          <label>E-mail:</label>
+          <input type="email" />
 
-          <label className="text-sm font-medium">Senha:</label>
-          <input
-            type="password"
-            className="border border-gray-400 rounded p-1"
-          />
+          <label>Senha:</label>
+          <input type="password" />
 
-          <div className="flex justify-center mt-4">
-            <button
-              type="submit"
-              className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded"
-            >
-              Entrar
-            </button>
-          </div>
+          <button type="submit" className="btn">Entrar</button>
         </form>
       </div>
     </div>
