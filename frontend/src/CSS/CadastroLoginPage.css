@@ -1,90 +1,92 @@
 .page {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+  align-items: flex-start; /* títulos alinhados à esquerda */
+  padding: 20px 60px;
 }
 
+/* Títulos Cadastro / Login */
 .titulo {
-  font-size: 22px;
+  color: #004d25;
+  margin: 20px 0 10px 0;
   font-weight: bold;
-  color: #134d2e; /* Verde escuro */
-  align-self: flex-start;
-  margin-left: 50px;
+  text-align: left;
 }
 
+/* Caixa */
 .card {
-  border: 2px solid #134d2e;
+  border: 1px solid #004d25;
   border-radius: 10px;
-  padding: 20px;
-  width: 280px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: white;
+  padding: 20px 30px;
+  margin-bottom: 30px;
+  width: 350px;
+  text-align: left;
 }
 
+/* Ícone usuário */
 .icone-usuario {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 15px;
+  position: relative;
 }
 
 .icone {
-  width: 50px;
-  height: 50px;
-  background: #134d2e;
+  width: 60px;
+  height: 60px;
+  background: #ccc;
   border-radius: 50%;
 }
 
 .plus {
   position: absolute;
-  right: -5px;
-  bottom: -2px;
+  bottom: 0;
+  right: 135px;
   background: white;
-  border: 2px solid #134d2e;
+  border: 2px solid #004d25;
   border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  font-size: 14px;
+  padding: 2px 6px;
   font-weight: bold;
-  color: #134d2e;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  color: #004d25;
 }
 
+/* Formulário */
 .formulario {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  width: 100%;
+  gap: 8px;
 }
 
 .formulario label {
   font-size: 14px;
-  margin-bottom: -5px;
-  color: black;
+  font-weight: 500;
 }
 
 .formulario input {
-  border: 1px solid #134d2e;
-  padding: 4px;
-  font-size: 14px;
-  outline: none;
+  padding: 5px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  width: 100%;
+}
+
+/* Botão */
+.botao-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
 }
 
 .botao {
-  background: #008c45; /* Verde botão */
+  padding: 8px 16px;
+  background: #007f3d;
   color: white;
   border: none;
-  padding: 6px;
-  margin-top: 10px;
+  border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  font-size: 14px;
-  width: 100px;
-  align-self: center;
 }
-l
+
+.botao:hover {
+  background: #005f2d;
+}
