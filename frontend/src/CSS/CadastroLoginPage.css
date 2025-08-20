@@ -11,7 +11,7 @@ body, html {
   color: #0a3d2e;
 }
 
-/* Container geral */
+/* Container principal da página */
 .page-container {
   display: flex;
   flex-direction: column;
@@ -20,22 +20,24 @@ body, html {
   min-height: 100vh;
 }
 
-/* Título */
+/* Título das seções */
 .section-title {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: 600;
   color: #064d34;
   margin: 20px 0 10px;
   width: 100%;
   max-width: 380px;
   text-align: left;
+  align-self: flex-start;
+  padding-left: 15%; /* 👈 esse é o segredo */
 }
 
-/* Caixa */
+
 .form-box {
-  border: 1px solid #064d34;
-  border-radius: 10px;
-  padding: 25px;
+  border: 2px solid #064d34;
+  border-radius: 20px;
+  padding: 60px;
   width: 100%;
   max-width: 380px;
   display: flex;
@@ -43,9 +45,18 @@ body, html {
   align-items: center;
   margin-bottom: 40px;
   background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* Ícone */
+/* 👩‍💻 Mais largo para telas acima de 768px */
+@media (min-width: 768px) {
+  .form-box {
+    max-width: 500px; /* ou 600px, se quiser mais espaço */
+  }
+}
+
+
+/* Ícone do usuário */
 .icon-container {
   position: relative;
   margin-bottom: 20px;
@@ -59,7 +70,6 @@ body, html {
   position: relative;
 }
 
-/* Bolinha do + grudada no canto do círculo */
 .icon-plus {
   position: absolute;
   bottom: -2px;
@@ -77,50 +87,109 @@ body, html {
   justify-content: center;
 }
 
-/* Formulário */
+/* Container externo para centralizar na tela */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* ocupa a altura total da tela */
+  background-color: #f5f5f5; /* cor de fundo suave */
+}
+
+/* Caixa do formulário */
+.form-box {
+  border: 2px solid #064d34;
+  border-radius: 40px;
+  padding: 70px;
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto; /* centraliza horizontalmente */
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Mais largo para desktop */
+@media (min-width: 768px) {
+  .form-box {
+    max-width: 500px;
+  }
+}
+
+/* Conteúdo do formulário */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* Caixa do formulário */
+.form-box {
+  border: 2px solid #064d34;
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Mais largo para desktop */
+@media (min-width: 768px) {
+  .form-box {
+    max-width: 600px;
+    padding: 60px;
+  }
+}
+
+/* Conteúdo do formulário */
 .form-content {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   width: 100%;
-  gap: 10px;
+  gap: 16px;
+}
+
+/* Mais largo para desktop */
+@media (min-width: 768px) {
+  .form-content {
+    gap: 20px;
+  }
 }
 
 .form-content label {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
+  color: #064d34;
 }
 
 .form-content input {
   border: 1px solid #064d34;
-  border-radius: 2px;
-  padding: 6px;
-  font-size: 14px;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 15px;
   outline: none;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-content input:focus {
   border-color: #046f47;
 }
 
-/* Botão */
-.btn {
-  background-color: #046f47;
-  color: #fff;
-  font-weight: bold;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 2px;
-  margin-top: 15px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
 
-.btn:hover {
-  background-color: #033f2d;
-}
-
-/* Responsivo */
+/* Responsivo para celular */
 @media (max-width: 480px) {
   .page-container {
     padding: 20px 10px;
@@ -135,7 +204,7 @@ body, html {
   .form-box {
     width: 100%;
     max-width: 100%;
-    padding: 20px;
+    padding: 30px;
   }
 
   .icon-user {
@@ -147,5 +216,9 @@ body, html {
     width: 18px;
     height: 18px;
     font-size: 12px;
+  }
+
+  .form-content {
+    max-width: 100%;
   }
 }
