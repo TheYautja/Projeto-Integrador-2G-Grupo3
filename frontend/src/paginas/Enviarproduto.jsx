@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
 import Header from './Header';
 import axios from 'axios';
+import '../CSS/EnviarProduto.css';
 
 const url = "http://localhost:5000";
 
 function EnviarProduto() {
   const [formData, setFormData] = useState({
     nome: "",
+    categoria: "",
+    condicao: "",
     preco: "",
     descricao: "",
-    quantia: "",
-    foto_url: ""
+    localizacao: "",
+    foto: null
   });
 
   const [produtos, setProdutos] = useState([]);
@@ -27,22 +30,38 @@ function EnviarProduto() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      const data = new FormData();
+      data.append("nome", formData.nome);
+      data.append("categoria", formData.categoria);
+      data.append("condicao", formData.condicao);
+      data.append("preco", formData.preco);
+      data.append("descricao", formData.descricao);
+      data.append("localizacao", formData.localizacao);
+      if (formData.foto) data.append("foto", formData.foto);
+
       if (editId) {
-        await axios.put(`${url}/produtos/${editId}`, formData);
+        await axios.put(`${url}/produtos/${editId}`, data, {
+          headers: { "Content-Type": "multipart/form-data" }
+        });
         setEditId(null);
       } else {
-        await axios.post(`${url}/produtos`, formData);
+        await axios.post(`${url}/produtos`, data, {
+          headers: { "Content-Type": "multipart/form-data" }
+        });
       }
+
       setFormData({
         nome: "",
+        categoria: "",
+        condicao: "",
         preco: "",
         descricao: "",
-        quantia: "",
-        foto_url: ""
+        localizacao: "",
+        foto: null
       });
       fetchProdutos();
     } catch (error) {
-      console.error("Erro ao enviar produto:", error);
+      console.error("Erro ao enviar os dados", error);
     }
   };
 
@@ -51,7 +70,7 @@ function EnviarProduto() {
       const res = await axios.get(`${url}/produtos`);
       setProdutos(res.data.produto);
     } catch (error) {
-      console.error("Erro ao buscar produtos:", error);
+      console.error("Erro ao buscar produtos", error);
     }
   };
 
@@ -60,7 +79,7 @@ function EnviarProduto() {
       await axios.delete(`${url}/produtos/${id}`);
       fetchProdutos();
     } catch (error) {
-      console.error("Erro ao deletar produto:", error);
+      console.error("Erro ao excluir produto", error);
     }
   };
 
@@ -75,54 +94,76 @@ function EnviarProduto() {
   }, []);
 
   return (
-    <div>
+    <div className="enviar-produto-container">
       <Header />
-      <h2>{editId ? "Editar Produto" : "Cadastrar Produto"}</h2>
+      <h2>
+        {editId ? (
+          "Editar Produto"
+        ) : (
+          <>
+            Vender <br /> Enviar produto para Vender
+          </>
+        )}
+      </h2>
+
       <form onSubmit={handleSubmit}>
         <label>
-          Nome:
+          Nome do Produto:
           <input type="text" name="nome" value={formData.nome} onChange={handleChange} required />
         </label>
-        <br />
 
         <label>
-          Preço:
+          Categoria:
+          <input type="text" name="categoria" value={formData.categoria} onChange={handleChange} required />
+        </label>
+
+        <label>
+          Condição Atual:
+          <input type="text" name="condicao" value={formData.condicao} onChange={handleChange} required />
+        </label>
+
+        <label>
+          Preço Sugerido:
           <input type="number" name="preco" value={formData.preco} onChange={handleChange} required />
         </label>
-        <br />
+
+        <label htmlFor="foto" className="botao-foto">Carregar Imagem</label>
+        <input
+          id="foto"
+          type="file"
+          name="foto"
+          accept="image/*"
+          onChange={(e) => setFormData({ ...formData, foto: e.target.files[0] })}
+          style={{ display: "none" }}
+        />
 
         <label>
-          Descrição:
-          <input type="text" name="descricao" value={formData.descricao} onChange={handleChange} required />
+          Descrição Detalhada:
+          <input typr="descricao" name={formData.descricao} onChange={handleChange} required />
         </label>
-        <br />
 
         <label>
-          Quantia:
-          <input type="number" name="quantia" value={formData.quantia} onChange={handleChange} required />
+          Localização do Produto:
+          <input type="text" name="localizacao" value={formData.localizacao} onChange={handleChange} required />
         </label>
-        <br />
 
-        <label>
-          Foto (URL):
-          <input type="text" name="foto_url" value={formData.foto_url} onChange={handleChange} required />
-        </label>
-        <br />
-
-        <button type="submit">{editId ? "Atualizar" : "Cadastrar"}</button>
+        <button type="submit">{editId ? "Atualizar Produto" : "Enviar Produto"}</button>
       </form>
 
-      <h2>Produtos cadastrados:</h2>
+      <h2>Produtos Cadastrados</h2>
       <ul>
         {produtos.map(produto => (
           <li key={produto.id}>
-            <strong>{produto.nome}</strong> - R${produto.preco} <br />
-            {produto.descricao} <br />
-            Quantia: {produto.quantia} <br />
-            <img src={produto.foto_url} alt={produto.nome} width="100" /><br />
-            <button onClick={() => handleEdit(produto)}>Editar</button>
-            <button onClick={() => handleDelete(produto.id)}>Deletar</button>
-            <br /><br />
+            <p><strong>{produto.nome}</strong> - R${produto.preco}</p>
+            <p>{produto.descricao}</p>
+            <p>Categoria: {produto.categoria}</p>
+            <p>Condição: {produto.condicao}</p>
+            <p>Localização: {produto.localizacao}</p>
+            {produto.foto_url && <img src={produto.foto_url} alt={produto.nome} />}
+            <div>
+              <button onClick={() => handleEdit(produto)}>Editar</button>
+              <button onClick={() => handleDelete(produto.id)}>Excluir</button>
+            </div>
           </li>
         ))}
       </ul>
