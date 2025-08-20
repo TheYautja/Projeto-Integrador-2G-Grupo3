@@ -1,14 +1,23 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:77507750@localhost/projetointegrador"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+app.config["SECRET_KEY"] = "estrogonofe de graxaim"
 
 db = SQLAlchemy(app)
 CORS(app, origins=["http://localhost:5173"])
 
+login_manager = LoginManager()
+login_manager.init_app(app)
+
+
+
+#tabelas 
 class Produto(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String, nullable=False)
@@ -34,16 +43,18 @@ def formatar_produto(produto):
         "foto_url": produto.foto_url
     }
 
+
+
 class Usuario (db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column (db.String, nullable = False)
-    email = db.Column (db.string, nullable = False)
-    senha_hash = db.Column ()
+    email = db.Column (db.String, nullable = False)
+    senha_hash = db.Column (db.String, nullable = False)
 
     def __init__(self, username, email, senha_hash):
         self.username = username
         self.email = email
-        self. senha_hash = senha_hash
+        self.senha_hash = senha_hash
 
 def formatar_user (usuario):
     return{
@@ -61,6 +72,7 @@ def teste():
     return "<h1>deu boa </h1>"
 
 
+#rotas dos produtos
 
 @app.route("/produtos", methods=["POST"])
 def cadastrar():
