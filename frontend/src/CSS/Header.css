@@ -11,23 +11,30 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    padding: 0;
+    margin: 0;
 }
 
 
-
 .linksNAV a {
-    color: #336342;
+    text-decoration: none;
+    color: #2f4736;
     font-weight: bold;
     font-size: 14px;
 }
 
+.linksNAV, .linksNAV li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 .linksNAV a:hover {
-    border-bottom: 2px solid #336342;
+    border-bottom: 2px solid #2f4736;
 }
 
 .logo img {
-    height: 40px;
+    height: 35px;
 }
 
 .icone {

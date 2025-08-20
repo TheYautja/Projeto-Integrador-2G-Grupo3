@@ -34,6 +34,26 @@ def formatar_produto(produto):
         "foto_url": produto.foto_url
     }
 
+class Usuario (db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column (db.String, nullable = False)
+    email = db.Column (db.string, nullable = False)
+    senha_hash = db.Column ()
+
+    def __init__(self, username, email, senha_hash):
+        self.username = username
+        self.email = email
+        self. senha_hash = senha_hash
+
+def formatar_user (usuario):
+    return{
+    "username": usuario.username,
+    "email": usuario.email,
+    "senha_hash": usuario.senha_hash
+    }
+
+
+
 
 
 @app.route("/", methods=["GET"])

@@ -1,7 +1,7 @@
 import "../CSS/Header.css"
 import { Link } from "react-router-dom";
-import imgCarrinho from '../assets/icon.png';
-import imgUser from '../assets/icon.png';
+import imgCarrinho from '../assets/The-Pirate-Bay-Symbol.png';
+import imgUser from '../assets/The-Pirate-Bay-Symbol.png';
 import imgLogo from '../assets/eco-bag.png';
 
 function Header(){
