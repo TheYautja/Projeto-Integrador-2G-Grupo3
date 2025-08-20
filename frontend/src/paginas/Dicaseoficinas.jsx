@@ -1,6 +1,5 @@
 import React from "react";
-import Header from './Header'
-
+import Header from "./Header";
 
 export default function Dicaseoficina() {
   return (
@@ -14,37 +13,56 @@ export default function Dicaseoficina() {
         <div className="text-[#003311] space-y-2">
           <p>
             <span className="mr-2">🪚</span>
-            oficina em destaque: <span className="font-bold">“Restauração de madeira”</span>
+            oficina em destaque:{" "}
+            <span className="font-bold">“Restauração de madeira”</span>
           </p>
           <p>
             <span className="mr-2">🎨</span>
-            dica criativa: <span className="font-bold">“Roupa tie-dye com sobras de tecido”</span>
+            dica criativa:{" "}
+            <span className="font-bold">
+              “Roupa tie-dye com sobras de tecido”
+            </span>
           </p>
         </div>
 
         {/* Agenda com espiral */}
         <div className="flex items-start">
-          {/* Espiral única com furos */}
-          <div
-            className="w-4 h-4 rounded-full bg-gray-400 mt-6 mr-3"
-            style={{
-              boxShadow: `
-                0 28px 0 #9ca3af,
-                0 56px 0 #9ca3af,
-                0 84px 0 #9ca3af,
-                0 112px 0 #9ca3af,
-                0 140px 0 #9ca3af
-              `
-            }}
-          ></div>
+          {/* Espiral de anéis */}
+          <div className="flex flex-col gap-6 pr-3 pt-6">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <span
+                key={i}
+                className="w-5 h-5 border-2 border-gray-400 rounded-full inline-block"
+                style={{
+                  borderLeftColor: "transparent",
+                  borderTopColor: "transparent",
+                  transform: "rotate(-45deg)",
+                }}
+              ></span>
+            ))}
+          </div>
 
           {/* Bloco da agenda */}
           <div className="border-2 border-[#003311] p-6 bg-white shadow-md">
-            <h3 className="text-base font-bold text-[#003311] mb-4">Agenda de oficinas</h3>
-            <ul className="text-sm text-[#003311] underline leading-7">
-              <li><a href="https://example.com/moveis">05/07 - Oficina de Móveis (Concórdia - SC)</a></li>
-              <li><a href="https://example.com/costura">08/07 - Oficina de Costura (Online)</a></li>
-              <li><a href="https://example.com/brinquedo">15/08 - Oficina de Brinquedo (Capinzal - SC)</a></li>
+            <h3 className="text-base font-bold text-[#003311] mb-4">
+              Agenda de oficinas
+            </h3>
+            <ul className="text-sm text-[#003311] underline leading-7 space-y-2">
+              <li>
+                <a href="https://example.com/moveis">
+                  05/07 - Oficina de Móveis (Concórdia - SC)
+                </a>
+              </li>
+              <li>
+                <a href="https://example.com/costura">
+                  08/07 - Oficina de Costura (Online)
+                </a>
+              </li>
+              <li>
+                <a href="https://example.com/brinquedo">
+                  15/08 - Oficina de Brinquedo (Capinzal - SC)
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -55,15 +73,47 @@ export default function Dicaseoficina() {
           <ul className="space-y-4 text-sm text-[#003311]">
             <li className="flex items-center gap-2">
               {/* Ícone câmera */}
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="#003311">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5l4.5-3v9l-4.5-3m-2.25 3H5.25A2.25 2.25 0 013 14.25v-4.5A2.25 2.25 0 015.25 7.5h8.25a2.25 2.25 0 012.25 2.25v4.5a2.25 2.25 0 01-2.25 2.25z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="#003311"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 10.5l4.5-3v9l-4.5-3m-2.25 
+                     3H5.25A2.25 2.25 0 013 14.25v-4.5A2.25 
+                     2.25 0 015.25 7.5h8.25a2.25 2.25 0 
+                     012.25 2.25v4.5a2.25 2.25 0 
+                     01-2.25 2.25z"
+                />
               </svg>
-              <a href="https://example.com/video1">Restaurando uma camisa que não uso mais</a>
+              <a href="https://example.com/video1">
+                Restaurando uma camisa que não uso mais
+              </a>
             </li>
             <li className="flex items-center gap-2">
               {/* Ícone câmera */}
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="#003311">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5l4.5-3v9l-4.5-3m-2.25 3H5.25A2.25 2.25 0 013 14.25v-4.5A2.25 2.25 0 015.25 7.5h8.25a2.25 2.25 0 012.25 2.25v4.5a2.25 2.25 0 01-2.25 2.25z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="#003311"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 10.5l4.5-3v9l-4.5-3m-2.25 
+                     3H5.25A2.25 2.25 0 013 14.25v-4.5A2.25 
+                     2.25 0 015.25 7.5h8.25a2.25 2.25 0 
+                     012.25 2.25v4.5a2.25 2.25 0 
+                     01-2.25 2.25z"
+                />
               </svg>
               <a href="https://example.com/video2">Restaurando minha estante</a>
             </li>
@@ -79,4 +129,3 @@ export default function Dicaseoficina() {
     </div>
   );
 }
-
