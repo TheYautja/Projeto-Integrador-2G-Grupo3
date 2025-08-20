@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "/Header"; 
+import Header from "./Header"; 
 import "../CSS/CadastroLoginPage.css";
 
 export default function CadastroLoginPage() {
