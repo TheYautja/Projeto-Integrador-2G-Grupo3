@@ -19,34 +19,35 @@ export default function Dicaseoficina() {
           <p>
             <span className="mr-2">🎨</span>
             dica criativa:{" "}
-            <span className="font-bold">
-              “Roupa tie-dye com sobras de tecido”
-            </span>
+            <span className="font-bold">“Roupa tie-dye com sobras de tecido”</span>
           </p>
         </div>
 
         {/* Agenda com espiral */}
         <div className="flex items-start">
-          {/* Espiral de anéis */}
-          <div className="flex flex-col gap-6 pr-3 pt-6">
+          {/* ESPIRAL (agora maior e virada para o lado certo) */}
+          <div className="flex flex-col gap-7 pr-4 pt-6">
             {Array.from({ length: 6 }).map((_, i) => (
               <span
                 key={i}
-                className="w-5 h-5 border-2 border-gray-400 rounded-full inline-block"
+                className="inline-block rounded-full border-[3px] border-gray-400 w-8 h-8"
                 style={{
+                  // escondemos dois lados da borda para simular a curva da mola
                   borderLeftColor: "transparent",
                   borderTopColor: "transparent",
-                  transform: "rotate(-45deg)",
+                  // gira para “abrir” à esquerda (como no caderno)
+                  transform: "rotate(135deg)",
+                  // leve brilho metálico
+                  boxShadow:
+                    "inset 2px 2px 2px rgba(255,255,255,.6), inset -2px -2px 2px rgba(0,0,0,.15)"
                 }}
-              ></span>
+              />
             ))}
           </div>
 
           {/* Bloco da agenda */}
           <div className="border-2 border-[#003311] p-6 bg-white shadow-md">
-            <h3 className="text-base font-bold text-[#003311] mb-4">
-              Agenda de oficinas
-            </h3>
+            <h3 className="text-base font-bold text-[#003311] mb-4">Agenda de oficinas</h3>
             <ul className="text-sm text-[#003311] underline leading-7 space-y-2">
               <li>
                 <a href="https://example.com/moveis">
@@ -84,16 +85,10 @@ export default function Dicaseoficina() {
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  d="M15.75 10.5l4.5-3v9l-4.5-3m-2.25 
-                     3H5.25A2.25 2.25 0 013 14.25v-4.5A2.25 
-                     2.25 0 015.25 7.5h8.25a2.25 2.25 0 
-                     012.25 2.25v4.5a2.25 2.25 0 
-                     01-2.25 2.25z"
+                  d="M15.75 10.5l4.5-3v9l-4.5-3m-2.25 3H5.25A2.25 2.25 0 013 14.25v-4.5A2.25 2.25 0 015.25 7.5h8.25a2.25 2.25 0 012.25 2.25v4.5a2.25 2.25 0 01-2.25 2.25z"
                 />
               </svg>
-              <a href="https://example.com/video1">
-                Restaurando uma camisa que não uso mais
-              </a>
+              <a href="https://example.com/video1">Restaurando uma camisa que não uso mais</a>
             </li>
             <li className="flex items-center gap-2">
               {/* Ícone câmera */}
@@ -108,11 +103,7 @@ export default function Dicaseoficina() {
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  d="M15.75 10.5l4.5-3v9l-4.5-3m-2.25 
-                     3H5.25A2.25 2.25 0 013 14.25v-4.5A2.25 
-                     2.25 0 015.25 7.5h8.25a2.25 2.25 0 
-                     012.25 2.25v4.5a2.25 2.25 0 
-                     01-2.25 2.25z"
+                  d="M15.75 10.5l4.5-3v9l-4.5-3m-2.25 3H5.25A2.25 2.25 0 013 14.25v-4.5A2.25 2.25 0 015.25 7.5h8.25a2.25 2.25 0 012.25 2.25v4.5a2.25 2.25 0 01-2.25 2.25z"
                 />
               </svg>
               <a href="https://example.com/video2">Restaurando minha estante</a>
