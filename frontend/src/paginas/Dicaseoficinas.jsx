@@ -1,8 +1,11 @@
 import React from 'react';
-import './DicasOficinas.css';
+import '../CSS/Dicaseoficinas.css';
+import Header from "../paginas/Header"
 
 function DicasOficinas() {
   return (
+    <div>
+    <Header />
     <section className="container">
       <h1>Dicas e oficinas</h1>
 
@@ -28,6 +31,7 @@ function DicasOficinas() {
         </ul>
       </div>
     </section>
+    </div>
   );
 }
 
