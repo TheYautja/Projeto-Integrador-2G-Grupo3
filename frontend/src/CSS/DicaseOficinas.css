@@ -1,0 +1,40 @@
+.container {
+  background-color: white;
+  padding: 25px;
+  margin: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.container h1 {
+  color: #2e7d32;
+  margin-bottom: 20px;
+}
+
+.destaques p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.agenda h2,
+.videos h2 {
+  color: #2e7d32;
+  margin-top: 25px;
+}
+
+.agenda ul,
+.videos ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.agenda ul li,
+.videos ul li {
+  margin: 8px 0;
+}
+
+.videos ul li a {
+  color: #2e7d32;
+  text-decoration: none;
+}
