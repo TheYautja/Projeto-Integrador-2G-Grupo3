@@ -3,11 +3,13 @@ import Header from "./Header";
 
 export default function Dicaseoficina() {
   return (
-    <div className="bg-white font-sans text-[#003311] min-h-screen flex flex-col">
+ <div className="bg-white font-sans text-[#003311] min-h-screen flex flex-col items-center">
+
       <Header />
 
       {/* Conteúdo */}
-      <main className="flex-grow px-6 py-10 max-w-[1000px] mx-auto space-y-10">
+      <main className="flex-grow w-full max-w-[1000px] px-6 py-10 space-y-10">
+
         <h2 className="text-2xl font-bold text-[#003311]">Dicas e oficinas</h2>
 
         <div className="text-[#003311] space-y-2">
