@@ -3,41 +3,41 @@ import Header from "./Header";
 
 export default function Dicaseoficina() {
   return (
-    <div className="bg-white font-sans text-[#003311] min-h-screen flex flex-col">
+ <div className="bg-white font-sans text-[#003311] min-h-screen flex flex-col items-center">
+
       <Header />
 
       {/* Conteúdo */}
-      <main className="flex-grow px-6 py-10 max-w-[1000px] mx-auto space-y-10">
-        <h2 className="text-2xl font-bold text-[#003311]">Dicas e oficinas</h2>
+     <main className="flex-grow w-full max-w-[1000px] px-6 py-10 space-y-10 flex flex-col items-center">
+
+      <h2 className="text-2xl font-bold text-[#003311] text-center">Dicas e oficinas</h2>
+
 
         <div className="text-[#003311] space-y-2">
           <p>
             <span className="mr-2">🪚</span>
-            oficina em destaque:{" "}
+            oficina em destaque:
             <span className="font-bold">“Restauração de madeira”</span>
           </p>
           <p>
             <span className="mr-2">🎨</span>
-            dica criativa:{" "}
+            dica criativa:
             <span className="font-bold">“Roupa tie-dye com sobras de tecido”</span>
           </p>
         </div>
 
         {/* Agenda com espiral */}
         <div className="flex items-start">
-          {/* ESPIRAL (agora maior e virada para o lado certo) */}
-          <div className="flex flex-col gap-7 pr-4 pt-6">
+          {/* Espiral */}
+          <div className="flex flex-col gap-5 pr-2 pt-6">
             {Array.from({ length: 6 }).map((_, i) => (
               <span
                 key={i}
                 className="inline-block rounded-full border-[3px] border-gray-400 w-8 h-8"
                 style={{
-                  // escondemos dois lados da borda para simular a curva da mola
                   borderLeftColor: "transparent",
                   borderTopColor: "transparent",
-                  // gira para “abrir” à esquerda (como no caderno)
                   transform: "rotate(135deg)",
-                  // leve brilho metálico
                   boxShadow:
                     "inset 2px 2px 2px rgba(255,255,255,.6), inset -2px -2px 2px rgba(0,0,0,.15)"
                 }}
@@ -46,8 +46,8 @@ export default function Dicaseoficina() {
           </div>
 
           {/* Bloco da agenda */}
-          <div className="border-2 border-[#003311] p-6 bg-white shadow-md">
-            <h3 className="text-base font-bold text-[#003311] mb-4">Agenda de oficinas</h3>
+          <div className="border-[1.5px] border-[#003311] p-5 bg-white shadow-md">
+            <h3 className="text-sm font-bold text-[#003311] mb-3">Agenda de oficinas</h3>
             <ul className="text-sm text-[#003311] underline leading-7 space-y-2">
               <li>
                 <a href="https://example.com/moveis">
@@ -70,10 +70,9 @@ export default function Dicaseoficina() {
 
         {/* Vídeos */}
         <div>
-          <h3 className="text-base font-bold text-[#003311] mb-4">Vídeos</h3>
+          <h3 className="text-sm font-bold text-[#003311] mb-3">Vídeos</h3>
           <ul className="space-y-4 text-sm text-[#003311]">
             <li className="flex items-center gap-2">
-              {/* Ícone câmera */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-5 h-5"
@@ -91,7 +90,6 @@ export default function Dicaseoficina() {
               <a href="https://example.com/video1">Restaurando uma camisa que não uso mais</a>
             </li>
             <li className="flex items-center gap-2">
-              {/* Ícone câmera */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-5 h-5"
@@ -114,8 +112,10 @@ export default function Dicaseoficina() {
 
       {/* Rodapé */}
       <footer className="flex justify-between items-center px-6 py-4 border-t border-gray-300 mt-10">
-        <img src="/icone-folha.svg" alt="folha" className="w-6 h-6" />
-        <img src="/icone-perfil.svg" alt="perfil" className="w-6 h-6" />
+        <div className="flex gap-4">
+          <img src="/icone-folha.svg" alt="folha" className="w-6 h-6" />
+          <img src="/icone-perfil.svg" alt="perfil" className="w-6 h-6" />
+        </div>
       </footer>
     </div>
   );
