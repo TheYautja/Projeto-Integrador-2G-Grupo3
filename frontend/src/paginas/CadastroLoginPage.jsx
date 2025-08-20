@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
-import Header from './Header';
-import '../CSS/CadastroLoginPage.css';
+import React from "react";
+import Header from "../Header"; 
+import "../CSS/CadastroLoginPage.css";
 
 export default function CadastroLoginPage() {
   return (
     <div className="page">
+      <Header />
+
       {/* Cadastro */}
       <h2 className="titulo">Cadastro</h2>
       <div className="card">
@@ -20,7 +22,7 @@ export default function CadastroLoginPage() {
           <label>Localização:</label>
           <input type="text" />
 
-          <label>E - Mail:</label>
+          <label>E-Mail:</label>
           <input type="email" />
 
           <label>CPF:</label>
@@ -29,9 +31,11 @@ export default function CadastroLoginPage() {
           <label>Senha:</label>
           <input type="password" />
 
-          <button type="submit" className="botao">
-            Cadastrar
-          </button>
+          <div className="botao-container">
+            <button type="submit" className="botao">
+              Cadastrar
+            </button>
+          </div>
         </form>
       </div>
 
@@ -44,15 +48,17 @@ export default function CadastroLoginPage() {
         </div>
 
         <form className="formulario">
-          <label>E-mail</label>
+          <label>E-mail:</label>
           <input type="email" />
 
           <label>Senha:</label>
           <input type="password" />
 
-          <button type="submit" className="botao">
-            Entrar
-          </button>
+          <div className="botao-container">
+            <button type="submit" className="botao">
+              Entrar
+            </button>
+          </div>
         </form>
       </div>
     </div>
