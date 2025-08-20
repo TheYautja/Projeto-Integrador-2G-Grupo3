@@ -8,9 +8,10 @@ export default function Dicaseoficina() {
       <Header />
 
       {/* Conteúdo */}
-      <main className="flex-grow w-full max-w-[1000px] px-6 py-10 space-y-10">
+     <main className="flex-grow w-full max-w-[1000px] px-6 py-10 space-y-10 flex flex-col items-center">
 
-        <h2 className="text-2xl font-bold text-[#003311]">Dicas e oficinas</h2>
+      <h2 className="text-2xl font-bold text-[#003311] text-center">Dicas e oficinas</h2>
+
 
         <div className="text-[#003311] space-y-2">
           <p>
