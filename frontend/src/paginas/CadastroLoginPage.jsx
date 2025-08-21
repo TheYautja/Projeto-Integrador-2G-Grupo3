@@ -1,26 +1,28 @@
-import React, { useState } from 'react';
-import Header from './Header';
+import React from 'react';
 import '../CSS/CadastroLoginPage.css';
+import Header from './Header';
 
 export default function CadastroLoginPage() {
   return (
-    <div className="page">
+    <div className="page-container">
+      <Header />
+
       {/* Cadastro */}
-      <h2 className="titulo">Cadastro</h2>
-      <div className="card">
-        <div className="icone-usuario">
-          <div className="icone"></div>
-          <div className="plus">+</div>
+      <h2 className="section-title">Cadastro</h2>
+      <div className="form-box">
+        <div className="icon-container">
+          <div className="icon-user"></div>
+          <div className="icon-plus">+</div>
         </div>
 
-        <form className="formulario">
+        <form className="form-content">
           <label>Nome completo:</label>
           <input type="text" />
 
           <label>Localização:</label>
           <input type="text" />
 
-          <label>E - Mail:</label>
+          <label>E-mail:</label>
           <input type="email" />
 
           <label>CPF:</label>
@@ -29,30 +31,26 @@ export default function CadastroLoginPage() {
           <label>Senha:</label>
           <input type="password" />
 
-          <button type="submit" className="botao">
-            Cadastrar
-          </button>
+          <button type="submit" className="btn">Cadastrar</button>
         </form>
       </div>
 
       {/* Login */}
-      <h2 className="titulo">Login</h2>
-      <div className="card">
-        <div className="icone-usuario">
-          <div className="icone"></div>
-          <div className="plus">+</div>
+      <h2 className="section-title">Login</h2>
+      <div className="form-box">
+        <div className="icon-container">
+          <div className="icon-user"></div>
+          <div className="icon-plus">+</div>
         </div>
 
-        <form className="formulario">
-          <label>E-mail</label>
+        <form className="form-content">
+          <label>E-mail:</label>
           <input type="email" />
 
           <label>Senha:</label>
           <input type="password" />
 
-          <button type="submit" className="botao">
-            Entrar
-          </button>
+          <button type="submit" className="btn">Entrar</button>
         </form>
       </div>
     </div>

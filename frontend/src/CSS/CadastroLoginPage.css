@@ -1,89 +1,224 @@
-.page {
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+  color: #0a3d2e;
+}
+
+/* Container principal da página */
+.page-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+  padding: 40px 20px;
+  min-height: 100vh;
 }
 
-.titulo {
-  font-size: 22px;
-  font-weight: bold;
-  color: #134d2e; /* Verde escuro */
+/* Título das seções */
+.section-title {
+  font-size: 30px;
+  font-weight: 600;
+  color: #064d34;
+  margin: 20px 0 10px;
+  width: 100%;
+  max-width: 380px;
+  text-align: left;
   align-self: flex-start;
-  margin-left: 50px;
+  padding-left: 15%; /* 👈 esse é o segredo */
 }
 
-.card {
-  border: 2px solid #134d2e;
-  border-radius: 10px;
-  padding: 20px;
-  width: 280px;
+
+.form-box {
+  border: 2px solid #064d34;
+  border-radius: 20px;
+  padding: 60px;
+  width: 100%;
+  max-width: 380px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: white;
+  margin-bottom: 40px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-.icone-usuario {
+/* 👩‍💻 Mais largo para telas acima de 768px */
+@media (min-width: 768px) {
+  .form-box {
+    max-width: 500px; /* ou 600px, se quiser mais espaço */
+  }
+}
+
+
+/* Ícone do usuário */
+.icon-container {
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-.icone {
-  width: 50px;
-  height: 50px;
-  background: #134d2e;
+.icon-user {
+  width: 55px;
+  height: 55px;
+  background-color: #999;
   border-radius: 50%;
+  position: relative;
 }
 
-.plus {
+.icon-plus {
   position: absolute;
-  right: -5px;
   bottom: -2px;
-  background: white;
-  border: 2px solid #134d2e;
+  right: -2px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #064d34;
+  background: #fff;
   border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  font-size: 14px;
+  color: #064d34;
   font-weight: bold;
-  color: #134d2e;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container externo para centralizar na tela */
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh; /* ocupa a altura total da tela */
+  background-color: #f5f5f5; /* cor de fundo suave */
 }
 
-.formulario {
+/* Caixa do formulário */
+.form-box {
+  border: 2px solid #064d34;
+  border-radius: 40px;
+  padding: 70px;
+  width: 100%;
+  max-width: 380px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  margin: 0 auto; /* centraliza horizontalmente */
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Mais largo para desktop */
+@media (min-width: 768px) {
+  .form-box {
+    max-width: 500px;
+  }
+}
+
+/* Conteúdo do formulário */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* Caixa do formulário */
+.form-box {
+  border: 2px solid #064d34;
+  border-radius: 20px;
+  padding: 40px;
   width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-.formulario label {
-  font-size: 14px;
-  margin-bottom: -5px;
-  color: black;
+/* Mais largo para desktop */
+@media (min-width: 768px) {
+  .form-box {
+    max-width: 600px;
+    padding: 60px;
+  }
 }
 
-.formulario input {
-  border: 1px solid #134d2e;
-  padding: 4px;
-  font-size: 14px;
-  outline: none;
+/* Conteúdo do formulário */
+.form-content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  gap: 16px;
 }
 
-.botao {
-  background: #008c45; /* Verde botão */
-  color: white;
-  border: none;
-  padding: 6px;
-  margin-top: 10px;
-  cursor: pointer;
+/* Mais largo para desktop */
+@media (min-width: 768px) {
+  .form-content {
+    gap: 20px;
+  }
+}
+
+.form-content label {
+  font-size: 15px;
   font-weight: bold;
-  font-size: 14px;
-  width: 100px;
-  align-self: center;
+  margin-bottom: 4px;
+  color: #064d34;
+}
+
+.form-content input {
+  border: 1px solid #064d34;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 15px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-content input:focus {
+  border-color: #046f47;
+}
+
+
+/* Responsivo para celular */
+@media (max-width: 480px) {
+  .page-container {
+    padding: 20px 10px;
+  }
+
+  .section-title {
+    font-size: 18px;
+    margin: 15px 0 8px;
+    max-width: 100%;
+  }
+
+  .form-box {
+    width: 100%;
+    max-width: 100%;
+    padding: 30px;
+  }
+
+  .icon-user {
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon-plus {
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+  }
+
+  .form-content {
+    max-width: 100%;
+  }
 }
