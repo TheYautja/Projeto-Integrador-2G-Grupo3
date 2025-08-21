@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../CSS/catalogo_de_produtos.css';
 import Header from './Header';
+import axios from 'axios';
+
+const url = "http://localhost:5000";
 
 function CatalogoDeProdutos() {
+  const [produtos, setProdutos] = useState([]);
+
+  // Fetch products on mount
+  useEffect(() => {
+    fetchProdutos();
+  }, []);
+
+  const fetchProdutos = async () => {
+    try {
+      const res = await axios.get(`${url}/produtos`);
+      setProdutos(res.data.produto);
+    } catch (error) {
+      console.error("Erro ao carregar produtos:", error);
+    }
+  };
+
   return (
     <div>
       <Header />
@@ -10,7 +29,7 @@ function CatalogoDeProdutos() {
       <main>
         <h1>Produtos</h1>
         <Filters />
-        <ProductList />
+        <ProductList produtos={produtos} />
       </main>
     </div>
   );
@@ -27,25 +46,24 @@ function Filters() {
   );
 }
 
-function ProductList() {
+function ProductList({ produtos }) {
+  if (produtos.length === 0) {
+    return <p>Nenhum produto cadastrado (ainda)</p>;
+  }
+
   return (
     <div className="product-list">
-      <ProductCard
-        imageUrl="https://m.media-amazon.com/images/I/71T5NVOgbpL._AC_SY450_.jpg"
-        title="iPhone 12 Apple Verde 64GB"
-        price="R$ 1500,00"
-        impact="70-90 kg CO₂"
-        description="Equivalente ambiental: produção de 200 copos plásticos descartáveis"
-        info="Última reforma: 2 meses atrás"
-      />
-      <ProductCard
-        imageUrl="https://images.tcdn.com.br/img/img_prod/668043/estante_armazenadora_de_madeira_161_1_20201.jpg"
-        title="Estante de madeira"
-        price="R$ 60,00"
-        impact="10-20 kg CO₂"
-        description="Equivalente ambiental: produção de 200 copos plásticos descartáveis"
-        info="Última reforma: 10 dias atrás"
-      />
+      {produtos.map((produto) => (
+        <ProductCard
+          key={produto.id}
+          imageUrl={produto.foto_url || "https://via.placeholder.com/150"} // fallback
+          title={produto.nome}
+          price={`R$ ${produto.preco}`}
+          impact="tem que fazer o impacto ambiental ainda"
+          description={produto.descricao}
+          info={`Categoria: ${produto.categoria} | Condição: ${produto.condicao} | Localização: ${produto.localizacao}`}
+        />
+      ))}
     </div>
   );
 }
@@ -66,7 +84,7 @@ function ProductCard({ imageUrl, title, price, impact, description, info }) {
         <button className="buy-btn">Comprar</button>
       </div>
     </div>
-  )}
-
+  );
+}
 
 export default CatalogoDeProdutos;
