@@ -6,7 +6,7 @@ import '../CSS/EnviarProduto.css';
 const url = "http://localhost:5000";
 
 function EnviarProduto() {
-  const [formData, setFormData] = useState({
+  const [dadosForm, setdadosForm] = useState({
     nome: "",
     categoria: "",
     condicao: "",
@@ -16,12 +16,12 @@ function EnviarProduto() {
     foto: null
   });
 
-  const [editId, setEditId] = useState(null);
+  const [editarID, seteditarID] = useState(null);
 
   
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setdadosForm(prev => ({
       ...prev,
       [name]: value
     }));
@@ -32,27 +32,27 @@ function EnviarProduto() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const data = new FormData();
-      data.append("nome", formData.nome);
-      data.append("categoria", formData.categoria);
-      data.append("condicao", formData.condicao);
-      data.append("preco", formData.preco);
-      data.append("descricao", formData.descricao);
-      data.append("localizacao", formData.localizacao);
-      if (formData.foto) data.append("foto", formData.foto);
+      const data = new dadosForm();
+      data.append("nome", dadosForm.nome);
+      data.append("categoria", dadosForm.categoria);
+      data.append("condicao", dadosForm.condicao);
+      data.append("preco", dadosForm.preco);
+      data.append("descricao", dadosForm.descricao);
+      data.append("localizacao", dadosForm.localizacao);
+      if (dadosForm.foto) data.append("foto", dadosForm.foto);
 
-      if (editId) {
-        await axios.put(`${url}/produtos/${editId}`, data, {
+      if (editarID) {
+        await axios.put(`${url}/produtos/${editarID}`, data, {
           headers: { "Content-Type": "multipart/form-data" }
         });
-        setEditId(null);
+        seteditarID(null);
       } else {
         await axios.post(`${url}/produtos`, data, {
           headers: { "Content-Type": "multipart/form-data" }
         });
       }
 
-      setFormData({
+      setdadosForm({
         nome: "",
         categoria: "",
         condicao: "",
@@ -73,26 +73,21 @@ function EnviarProduto() {
       <Header />
       <h2>enviar produto</h2>
 
-      <form onSubmit={handleSubmit}>
-        <label> nome <input type="text" name="nome" value={formData.nome} onChange={handleChange} required /> </label>
-
-        <label> categoria <input type="text" name="categoria" value={formData.categoria} onChange={handleChange} required /> </label>
-
-        <label> condicao <input type="text" name="condicao" value={formData.condicao} onChange={handleChange} required /> </label>
-
-        <label> preco <input type="number" name="preco" value={formData.preco} onChange={handleChange} required /> </label>
-
+      <form  onSubmit={handleSubmit}>
+        <label> nome <input type="text" name="nome" value={dadosForm.nome} onChange={handleChange} required /> </label>
+        <label> categoria <input type="text" name="categoria" value={dadosForm.categoria} onChange={handleChange} required /> </label>
+        <label> condicao <input type="text" name="condicao" value={dadosForm.condicao} onChange={handleChange} required /> </label>
+        <label> preco <input type="number" name="preco" value={dadosForm.preco} onChange={handleChange} required /> </label>
         <label htmlFor="foto">imagem (clicavel, falta estilizar)</label>
 
-        <input id="foto" type="file" name="foto" accept="image/*" onChange={(e) => setFormData(
-          { ...formData, foto: e.target.files[0] })}
+        <input id="foto" type="file" name="foto" accept="image/*" onChange={(e) => setdadosForm(
+          { ...dadosForm, foto: e.target.files[0] })}
           style={{ display: "none" }}/>
 
-        <label> descrição <input type="text" name="descricao" value={formData.descricao} onChange={handleChange} required /> </label>
-
-        <label> cidade <input type="text" name="localizacao" value={formData.localizacao} onChange={handleChange} required /> </label>
-
-        <button type="submit">{editId ? "Atualizar Produto" : "Enviar Produto"}</button>
+        <label> descrição <input type="text" name="descricao" value={dadosForm.descricao} onChange={handleChange} required /> </label>
+        <label> cidade <input type="text" name="localizacao" value={dadosForm.localizacao} onChange={handleChange} required /> </label>
+        <button type="submit">{editarID ? "Atualizar Produto" : "Enviar Produto"}</button>
+        
       </form>
     </div>
   );
