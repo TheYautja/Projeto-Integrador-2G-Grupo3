@@ -126,7 +126,7 @@ def adicionar_carrinho():
 @app.route("/carrinho", methods=["GET"])
 def ver_carrinho():
     if "user_id" not in session:
-        return jsonify({"error": "logue primeiro"}), 401
+        return jsonify({"error": "voce nao esta logado"}), 401
 
     conn = pegar_conexao()
     cur = conn.cursor()

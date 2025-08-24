@@ -1,16 +1,15 @@
 
 
 .bannerHomepage {
-    background-image: url(./placeholder.png);
-    background-size: cover;
+    background-image: url(../assets/banner.png);
+    background-size: 110%;
     background-position: center;
-    background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     color: white;
     text-align: center;
 }
@@ -19,33 +18,38 @@
     font-size: 48px;
     max-width: 700px;
     margin-bottom: 2rem;
+    margin-top: 10%;
 }
 
-.botoesHomepage button {
-    background-color: rgb(0, 96, 13);
-    color: white;
-    border: none;
-    border-radius: 16px;
-    padding: 12px 24px;
+.bannerHomepage button {
+    width: 30%;
+    height: 10;
+    background-color: rgb(7, 97, 19);
     cursor: grab;
+    margin-top: 7.5%;
+    font-size: 30px;
 }
 
+/*destaques*/
 #cards {
-    padding: 40px 20px;
-    background-color: #ffffff;
-    text-align: center;
-
+    background-color: #f3f3f3;
 }
 
 
 .tituloDestaques {
-    background: rgb(0, 140, 12);
+    display: flex;
+    justify-content: left;
+    width: 25%;
+
+}
+
+.tituloDestaques h2{
     color: white;
+    font-size: 24px;
+    background: rgb(0, 140, 12);
     padding: 12px 24px;
     border-radius: 0 0 50% 0;
-    display: inline-block;
     margin-bottom: 30px;
-    font-size: 24px;
 }
 
 .destaquesHomepage {
@@ -66,10 +70,15 @@
     background-color: rgb(208, 208, 208);
 }
 
+
 .cartaoDestaque h5 {
     margin: 10px 0 4px;
 }
 
+
+
+
+/*impacto*/
 #impacto {
     padding: 60px 20px;
     text-align: center;
@@ -86,4 +95,8 @@
 font-size: 20px;
   margin: 10px 0;
   font-weight: bold;
+}
+
+.negrito{
+    font-weight: bolder;
 }
