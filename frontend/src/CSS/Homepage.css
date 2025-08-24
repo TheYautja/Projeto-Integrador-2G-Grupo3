@@ -15,86 +15,143 @@
 }
 
 .bannerHomepage p {
-    font-size: 48px;
-    max-width: 700px;
+    font-size: 90px;
+    max-width: 60%;
     margin-bottom: 2rem;
     margin-top: 10%;
 }
 
 .bannerHomepage button {
-    width: 30%;
-    height: 10;
+    width: 25%;
+    position: absolute;
+    padding: 12px 32px;
     background-color: rgb(7, 97, 19);
-    cursor: grab;
-    margin-top: 7.5%;
-    font-size: 30px;
+    cursor: pointer;
+    margin-top: 2rem;
+    font-size: 24px;
+    color: white;
+    right: 57%;
+    top: 76%;
+
 }
 
-/*destaques*/
+
 #cards {
-    background-color: #f3f3f3;
+    background-color: #ffffff;
+    padding: 4rem 2rem;
+    position: relative;
+    width: 100vw;
+    height: 80vh;
+    box-sizing: border-box;
+    text-align: left;
 }
-
 
 .tituloDestaques {
-    display: flex;
-    justify-content: left;
-    width: 25%;
-
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 25%;
+    min-height: 25%;
+    margin-bottom: 2rem;     
+    object-fit: contain; 
 }
 
-.tituloDestaques h2{
-    color: white;
-    font-size: 24px;
-    background: rgb(0, 140, 12);
-    padding: 12px 24px;
-    border-radius: 0 0 50% 0;
-    margin-bottom: 30px;
-}
 
 .destaquesHomepage {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
-
-
 }
 
 .cartaoDestaque{
-    border: 1px solid rgb(39, 39, 39);
     border-radius: 16px;
     padding: 16px;
     width: 260px;
     text-align: center;
-    background-color: rgb(208, 208, 208);
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.cartaoDestaque:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
 
-.cartaoDestaque h5 {
+.cartaoDestaque img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.cartaoDestaque h3 {
+    font-size: 18px;
+    font-weight: bold;
     margin: 10px 0 4px;
 }
 
+.cartaoDestaque p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.cartaoDestaque h5 {
+    font-size: 16px;
+    color: #2e7d32;
+    font-weight: bold;
+}
 
 
-
-/*impacto*/
 #impacto {
-    padding: 60px 20px;
-    text-align: center;
+    position: relative;
+    height: 80vh;   
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5%;
+    box-sizing: border-box;
 }
 
 
 .impactoHomepage h1 {
-    font-size: 32px;
-    margin-bottom: 1rem;
+    font-size: 64px;
     color: #2e7d32;
+    margin-bottom: 1rem;
+    position: relative; 
+    z-index: 2;
 }
 
+
 .impactoHomepage p {
-font-size: 20px;
-  margin: 10px 0;
-  font-weight: bold;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 8px 0;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.impactoHomepage p img {
+    position: static;
+    height: 40px; 
+    width: 40px;  
+    object-fit: contain;
+}
+
+.impactoHomepage > img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    min-width: 200px;
+    object-fit: cover;
+    z-index: 1;
 }
 
 .negrito{

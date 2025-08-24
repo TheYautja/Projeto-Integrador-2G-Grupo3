@@ -1,6 +1,10 @@
 import Header from "./Header"
 import "../CSS/Homepage.css"
 import img1 from "../assets/eco-bag.png"
+import ondasVerdes from "../assets/homepage ondas verdes.png"
+import folhinhas from "../assets/homepage folhas.png"
+import reciclagem from "../assets/homepage reciclagem.png"
+import destaques from "../assets/homepage destaques.png"
 
 
 function Homepage (){
@@ -19,20 +23,21 @@ function Homepage (){
 
             <section id="cards">
 
-                <div className="tituloDestaques">
-                    <h2 >destaques</h2>
-                </div>
+
+                    <img src={destaques} className="tituloDestaques"></img>
                 
                 <div className="destaquesHomepage">
                     <div className="cartaoDestaque">
-                        <img src={img1} alt="item1"></img>
+                        <img src={img1} alt="item1" />
+                        <h3>produto</h3>
                         <p>descricao</p>
-                        <h5>impacto ambiental</h5>
+                        <h5>R$ xxxx,xx</h5>
                     </div>
                     <div className="cartaoDestaque">
-                        <img src={img1} alt="item2"></img>
+                        <img src={img1} alt="item1" />
+                        <h3>produto</h3>
                         <p>descricao</p>
-                        <h5>impacto ambiental</h5>
+                        <h5>R$ xxxx,xx</h5>
                     </div>
                 </div>
             </section>
@@ -40,9 +45,10 @@ function Homepage (){
 
             <section id="impacto">
                 <div className="impactoHomepage">
-                    <h1>Impacto Coletivo</h1>
-                    <p>x kg de carbono evitados</p>
-                    <p>987 itens reaproveitados</p>
+                    <h1>Impacto Coletivo:</h1>
+                    <p> <img src={folhinhas}/>1234 kg de carbono evitados</p>
+                    <p> <img src={reciclagem}/>987 itens reaproveitados</p>
+                    <img src={ondasVerdes}></img>
                 </div> 
             </section>
         </div>
