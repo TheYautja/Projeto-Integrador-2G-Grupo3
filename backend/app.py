@@ -145,6 +145,44 @@ def ver_carrinho():
     return jsonify({"carrinho": carrinho})
 
 
+@app.route("/produtos", methods=["POST"])
+def adicionar_produto():
+    nome = request.form.get("nome")
+    categoria = request.form.get("categoria")
+    condicao = request.form.get("condicao")
+    preco = request.form.get("preco")
+    descricao = request.form.get("descricao")
+    localizacao = request.form.get("localizacao")
+
+    foto = request.files.get("foto")
+    foto_url = None
+
+    if foto:
+        filename = foto.filename
+        caminho = os.path.join(UPLOAD_FOLDER, filename)
+        foto.save(caminho)
+        foto_url = f"static/uploads/{filename}"
+
+    conn = pegar_conexao()
+    cur = conn.cursor()
+    try:
+        cur.execute(
+            """INSERT INTO produtos (nome, categoria, condicao, preco, descricao, localizacao, foto_url)
+               VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id""",
+            (nome, categoria, condicao, preco, descricao, localizacao, foto_url)
+        )
+        produto_id = cur.fetchone()[0]
+        conn.commit()
+        return jsonify({"id": produto_id, "nome": nome}), 201
+    except Exception as e:
+        conn.rollback()
+        return jsonify({"error": str(e)}), 400
+    finally:
+        cur.close()
+        conn.close()
+
+
+
 
 @app.route ("/pesquisar", methods=["GET"])
 def pesquisar():
