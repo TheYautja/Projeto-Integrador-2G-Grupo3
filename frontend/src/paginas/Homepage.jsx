@@ -4,7 +4,6 @@ import img1 from "../assets/eco-bag.png"
 import ondasVerdes from "../assets/homepage ondas verdes.png"
 import folhinhas from "../assets/homepage folhas.png"
 import reciclagem from "../assets/homepage reciclagem.png"
-import destaques from "../assets/homepage destaques.png"
 
 
 function Homepage (){
@@ -24,7 +23,7 @@ function Homepage (){
             <section id="cards">
 
 
-                    <img src={destaques} className="tituloDestaques"></img>
+                    <h2 className="tituloDestaques"> Destaques </h2>
                 
                 <div className="destaquesHomepage">
                     <div className="cartaoDestaque">
