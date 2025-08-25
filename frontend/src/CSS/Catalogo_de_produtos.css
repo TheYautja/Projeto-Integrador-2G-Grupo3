@@ -1,5 +1,8 @@
 body {
   font-family: Arial, sans-serif;
+  background: #fff;
+  margin: 0;
+  padding: 0;
 }
 
 .navigation {
@@ -90,79 +93,69 @@ h1 {
 }
 
 .product-list {
-  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;  
+  padding: 20px;    
 }
 
 .product-card {
   display: flex;
-  border: 1px solid #3a5b31;
-  border-radius: 18px;
-  margin-bottom: 20px;
-  overflow: hidden;
-  padding: 18px;
+  flex-direction: row;  
   align-items: center;
+  width: 100%;
+  max-width: 450px;
+  border: 1px solid #3a5b31;
+  border-radius: 14px;
+  padding: 18px;
   background: #fff;
-  box-shadow: 0 2px 8px rgba(58,91,49,0.07);
 }
 
 .product-card img {
-  width: 120px;
+  min-width: 180px;
   height: auto;
-  margin-right: 24px;
-  border-radius: 10px;
-  background: #f5f5f5;
+  border-radius: 12px;
   object-fit: cover;
+  margin-right: 20px;
 }
+
 
 .product-info {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  text-align: center;
 }
 
-.product-info a {
+.product-info h3 { 
+  margin: 0 0 6px 0;
+  font-size: 1.25em;
   font-weight: bold;
-  color: #3a5b31;
-  text-decoration: none;
-  font-size: 1.1em;
-}
-
-.product-info .price {
-  margin: 6px 0 8px 0;
-  font-size: 1.15em;
   color: #1c1c1c;
 }
 
-.product-info .impact {
-  font-size: 0.92em;
-  color: #333;
-  margin-bottom: 8px;
+.product-info .price {
+  margin: 4px 0 10px 0;
+  font-size: 1.15em;
+  font-weight: bold;
+  color: #1c1c1c;
 }
 
+
 .product-info .buy-btn {
-  background: #3a5b31;
   color: white;
-  padding: 8px 25px;
   border: none;
   border-radius: 8px;
   font-size: 1em;
   cursor: pointer;
-  transition: background 0.2s;
+  font-weight: 500;
+  display: block;
+  margin: 12px auto 0;
+  align-self: center;
 }
 
 .product-info .buy-btn:hover {
-  background: #295124;
-}
-
-footer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 16px 0;
-  background: #f5f5f5;
-  border-top: 2px solid #b9b9b9;
-  margin-top: 32px;
-}
-
-.footer-icon {
-  font-size: 1.5em;
-  color: #3a5b31;
+  background: #1e3c1a;
 }
