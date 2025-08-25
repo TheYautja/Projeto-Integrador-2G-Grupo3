@@ -1,8 +1,8 @@
 import "../CSS/Header.css"
 import { Link } from "react-router-dom";
-import imgCarrinho from '../assets/shopping-cart.png';
-import imgUser from '../assets/icon.png';
-import imgLogo from '../assets/eco-bag - Copy.png';
+import imgCarrinho from '../assets/The-Pirate-Bay-Symbol.png';
+import imgUser from '../assets/The-Pirate-Bay-Symbol.png';
+import imgLogo from '../assets/eco-bag.png';
 
 function Header(){
     return(
@@ -27,3 +27,4 @@ function Header(){
 }
 
 export default Header;
+/* <a href="https://www.flaticon.com/free-icons/eco-bag" title="eco bag icons">Eco bag icons created by Futuer - Flaticon</a> */

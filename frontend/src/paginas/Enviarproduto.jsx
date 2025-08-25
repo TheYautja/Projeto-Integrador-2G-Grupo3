@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from './Header';
 import axios from 'axios';
 import '../CSS/EnviarProduto.css';
@@ -6,7 +6,7 @@ import '../CSS/EnviarProduto.css';
 const url = "http://localhost:5000";
 
 function EnviarProduto() {
-  const [dadosForm, setdadosForm] = useState({
+  const [formData, setFormData] = useState({
     nome: "",
     categoria: "",
     condicao: "",
@@ -16,43 +16,41 @@ function EnviarProduto() {
     foto: null
   });
 
-  const [editarID, seteditarID] = useState(null);
+  const [produtos, setProdutos] = useState([]);
+  const [editId, setEditId] = useState(null);
 
-  
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setdadosForm(prev => ({
+    setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
 
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const data = new dadosForm();
-      data.append("nome", dadosForm.nome);
-      data.append("categoria", dadosForm.categoria);
-      data.append("condicao", dadosForm.condicao);
-      data.append("preco", dadosForm.preco);
-      data.append("descricao", dadosForm.descricao);
-      data.append("localizacao", dadosForm.localizacao);
-      if (dadosForm.foto) data.append("foto", dadosForm.foto);
+      const data = new FormData();
+      data.append("nome", formData.nome);
+      data.append("categoria", formData.categoria);
+      data.append("condicao", formData.condicao);
+      data.append("preco", formData.preco);
+      data.append("descricao", formData.descricao);
+      data.append("localizacao", formData.localizacao);
+      if (formData.foto) data.append("foto", formData.foto);
 
-      if (editarID) {
-        await axios.put(`${url}/produtos/${editarID}`, data, {
+      if (editId) {
+        await axios.put(`${url}/produtos/${editId}`, data, {
           headers: { "Content-Type": "multipart/form-data" }
         });
-        seteditarID(null);
+        setEditId(null);
       } else {
         await axios.post(`${url}/produtos`, data, {
           headers: { "Content-Type": "multipart/form-data" }
         });
       }
 
-      setdadosForm({
+      setFormData({
         nome: "",
         categoria: "",
         condicao: "",
@@ -61,34 +59,114 @@ function EnviarProduto() {
         localizacao: "",
         foto: null
       });
+      fetchProdutos();
     } catch (error) {
-      console.error("deu pau no envio", error);
+      console.error("Erro ao enviar os dados", error);
     }
   };
 
+  const fetchProdutos = async () => {
+    try {
+      const res = await axios.get(`${url}/produtos`);
+      setProdutos(res.data.produto);
+    } catch (error) {
+      console.error("Erro ao buscar produtos", error);
+    }
+  };
 
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`${url}/produtos/${id}`);
+      fetchProdutos();
+    } catch (error) {
+      console.error("Erro ao excluir produto", error);
+    }
+  };
+
+  const handleEdit = (produto) => {
+    setFormData(produto);
+    setEditId(produto.id);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    fetchProdutos();
+  }, []);
 
   return (
-    <div>
+    <div className="enviar-produto-container">
       <Header />
-      <h2>enviar produto</h2>
+      <h2>
+        {editId ? (
+          "Editar Produto"
+        ) : (
+          <>
+            Vender <br /> Enviar produto para Vender
+          </>
+        )}
+      </h2>
 
-      <form  onSubmit={handleSubmit}>
-        <label> nome <input type="text" name="nome" value={dadosForm.nome} onChange={handleChange} required /> </label>
-        <label> categoria <input type="text" name="categoria" value={dadosForm.categoria} onChange={handleChange} required /> </label>
-        <label> condicao <input type="text" name="condicao" value={dadosForm.condicao} onChange={handleChange} required /> </label>
-        <label> preco <input type="number" name="preco" value={dadosForm.preco} onChange={handleChange} required /> </label>
-        <label htmlFor="foto">imagem (clicavel, falta estilizar)</label>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Nome do Produto:
+          <input type="text" name="nome" value={formData.nome} onChange={handleChange} required />
+        </label>
 
-        <input id="foto" type="file" name="foto" accept="image/*" onChange={(e) => setdadosForm(
-          { ...dadosForm, foto: e.target.files[0] })}
-          style={{ display: "none" }}/>
+        <label>
+          Categoria:
+          <input type="text" name="categoria" value={formData.categoria} onChange={handleChange} required />
+        </label>
 
-        <label> descrição <input type="text" name="descricao" value={dadosForm.descricao} onChange={handleChange} required /> </label>
-        <label> cidade <input type="text" name="localizacao" value={dadosForm.localizacao} onChange={handleChange} required /> </label>
-        <button type="submit">{editarID ? "Atualizar Produto" : "Enviar Produto"}</button>
-        
+        <label>
+          Condição Atual:
+          <input type="text" name="condicao" value={formData.condicao} onChange={handleChange} required />
+        </label>
+
+        <label>
+          Preço Sugerido:
+          <input type="number" name="preco" value={formData.preco} onChange={handleChange} required />
+        </label>
+
+        <label htmlFor="foto" className="botao-foto">Carregar Imagem</label>
+        <input
+          id="foto"
+          type="file"
+          name="foto"
+          accept="image/*"
+          onChange={(e) => setFormData({ ...formData, foto: e.target.files[0] })}
+          style={{ display: "none" }}
+        />
+
+        <label>
+          Descrição Detalhada:
+          <input typr="descricao" name={formData.descricao} onChange={handleChange} required />
+        </label>
+
+        <label>
+          Localização do Produto:
+          <input type="text" name="localizacao" value={formData.localizacao} onChange={handleChange} required />
+        </label>
+
+        <button type="submit">{editId ? "Atualizar Produto" : "Enviar Produto"}</button>
       </form>
+
+      <h2>Produtos Cadastrados</h2>
+      <ul>
+        {produtos.map(produto => (
+          <li key={produto.id}>
+            <p><strong>{produto.nome}</strong> - R${produto.preco}</p>
+            <p>{produto.descricao}</p>
+            <p>Categoria: {produto.categoria}</p>
+            <p>Condição: {produto.condicao}</p>
+            <p>Localização: {produto.localizacao}</p>
+            {produto.foto_url && <img src={produto.foto_url} alt={produto.nome} />}
+            <div>
+              <button onClick={() => handleEdit(produto)}>Editar</button>
+              <button onClick={() => handleDelete(produto.id)}>Excluir</button>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

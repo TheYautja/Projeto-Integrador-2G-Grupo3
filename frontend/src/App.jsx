@@ -13,7 +13,7 @@ function App (){
   return(
 
     <BrowserRouter>
-      <Routes>
+         <Routes>
            <Route path="/" element ={<Homepage />}/>
            <Route path="/ProdutoIndividual" element={<ProdutoIndividual />} />
            <Route path="/Dicaseoficinas" element={<Dicaseoficinas />} />
@@ -22,8 +22,8 @@ function App (){
            <Route path="/CadastroLoginPage" element={<Cadastro />} />
            <Route path="/Carrinho" element={<Carrinho />} />
            <Route path="/Homepage" element={<Homepage />} />
-      </Routes>
-    </BrowserRouter>
+         </Routes>
+       </BrowserRouter>
 
   )
 }
