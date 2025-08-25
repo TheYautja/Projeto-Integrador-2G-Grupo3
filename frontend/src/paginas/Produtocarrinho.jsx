@@ -12,7 +12,7 @@ function ProdutoCarrinho({ imagem, nome, preco, impacto, ultimaRevisao }) {
         <p className="revisao">Última reforma: {ultimaRevisao}</p>
         <div className="acoes">
           <button className="btn-comprar">Comprar</button>
-          <span className="quantidade">+1</span>
+z
         </div>
       </div>
     </div>

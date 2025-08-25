@@ -1,62 +1,88 @@
+<<<<<<< HEAD
  HEAD
 import React from "react";
 import Header from "./Header"; 
 import "../CSS/CadastroLoginPage.css";
 import React from 'react';
+=======
+import React, { useState } from "react";
+import axios from "axios";
+>>>>>>> ba806feea1127ebe53ad952ea27a127768223968
 import '../CSS/CadastroLoginPage.css';
 import Header from './Header';
 
+
+const url = "http://localhost:5000";
+
+
 export default function CadastroLoginPage() {
+  const [formCadastro, setFormCadastro] = useState({ nome:"", email:"", senha:"", localizacao:"", cpf:"" });
+  const [formLogin, setFormLogin] = useState({ email: "", senha: "" });
+  const [mostrarLogin, setmostrarLogin] = useState(false);
+ 
+
+
+  const handleCadastro = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post(`${url}/usuarios`, formCadastro);
+      alert("cadastro bem sucedido");
+      setmostrarLogin(true);
+    } catch (err) {
+      console.error(err);
+      alert("erro no cadastro: ");}};
+    
+
+  
+
+
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post(`${url}/login`, formLogin, { withCredentials: true });
+      alert(`logado, voce sera redirecionado em breve, usuario ${res.data.user_id}`);
+    } catch (err) {
+      console.error(err.response?.data);
+      alert("login fracassado");
+    }};
+  
+
+
+
   return (
-    <div className="page-container">
+    <div>
       <Header />
 
-      {/* Cadastro */}
-      <h2 className="section-title">Cadastro</h2>
-      <div className="form-box">
-        <div className="icon-container">
-          <div className="icon-user"></div>
-          <div className="icon-plus">+</div>
-        </div>
+      {!mostrarLogin ? (
+        <>
+          <h2>Cadastro</h2>
 
-        <form className="form-content">
-          <label>Nome completo:</label>
-          <input type="text" />
+          <form onSubmit={handleCadastro}>
 
-          <label>Localização:</label>
-          <input type="text" />
+            <label>nome completo</label>
+            <input type="text" onChange={e => setFormCadastro({...formCadastro, nome:e.target.value})} required />
+            <label>localizacao</label>
+            <input type="text" onChange={e => setFormCadastro({...formCadastro, localizacao:e.target.value})} required />
+            <label>email</label>
+            <input type="email" onChange={e => setFormCadastro({...formCadastro, email:e.target.value})} required />
+            <label>cpf</label>
+            <input type="text" onChange={e => setFormCadastro({...formCadastro, cpf:e.target.value})} required />
+            <label>senha</label>
+            <input type="password" onChange={e => setFormCadastro({...formCadastro, senha:e.target.value})} required />
+            <button type="submit">cadastrar</button>
+          </form> </> ) : (
 
-          <label>E-mail:</label>
-          <input type="email" />
-
-          <label>CPF:</label>
-          <input type="text" />
-
-          <label>Senha:</label>
-          <input type="password" />
-
-          <button type="submit" className="btn">Cadastrar</button>
-        </form>
-      </div>
-
-      {/* Login */}
-      <h2 className="section-title">Login</h2>
-      <div className="form-box">
-        <div className="icon-container">
-          <div className="icon-user"></div>
-          <div className="icon-plus">+</div>
-        </div>
-
-        <form className="form-content">
-          <label>E-mail:</label>
-          <input type="email" />
-
-          <label>Senha:</label>
-          <input type="password" />
-
-          <button type="submit" className="btn">Entrar</button>
-        </form>
-      </div>
+        <>
+          <h2>Login</h2>
+          <form onSubmit={handleLogin}>
+            <label>email</label>
+            <input type="email" onChange={e => setFormLogin({...formLogin, email:e.target.value})} required />
+            <label>senha</label>
+            <input type="password" onChange={e => setFormLogin({...formLogin, senha:e.target.value})} required />
+            <button type="submit">Login</button>
+          </form>
+        </>
+      )}
     </div>
-  );
-}
+    );}
