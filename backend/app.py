@@ -144,5 +144,13 @@ def ver_carrinho():
     carrinho = [{"id": i[0], "nome": i[1], "preco": i[2], "quantidade": i[3]} for i in items]
     return jsonify({"carrinho": carrinho})
 
+
+
+@app.route ("/pesquisar", methods=["GET"])
+def pesquisar():
+    query = request.args.get
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
