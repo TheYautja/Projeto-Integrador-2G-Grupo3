@@ -32,8 +32,10 @@
     border: none;
 }
 
+
 .linksNAV li:hover {
     border-bottom: 2px solid #2f4736;
+
 }
 
 .logo img {
