@@ -189,6 +189,30 @@ def pesquisar():
     query = request.args.get
 
 
+@app.route("/carrinho/<int:carrinho_id>", methods=["DELETE"])
+def remover_carrinho(carrinho_id):
+    if "user_id" not in session:
+        return jsonify({"error": "voce nao esta logado"}), 401
+
+    conn = pegar_conexao()
+    cur = conn.cursor()
+    try:
+        cur.execute(
+            "DELETE FROM carrinho WHERE id = %s AND usuario_id = %s",
+            (carrinho_id, session["user_id"])
+        )
+
+        conn.commit()
+        return jsonify({"message": "item removido"})
+    except Exception as e:
+        conn.rollback()
+        return jsonify({"error": str(e)}), 400
+    finally:
+        cur.close()
+        conn.close()
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)

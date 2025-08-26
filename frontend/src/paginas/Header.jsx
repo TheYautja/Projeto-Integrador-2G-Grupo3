@@ -18,6 +18,8 @@ function Header(){
                     <li><Link to="/Dicaseoficinas">DICAS E OFICINAS</Link></li>
                     <li className="icone">
                         <Link to="/Carrinho"><img src={imgCarrinho} alt="carrinho" /></Link>
+                    </li>
+                    <li className="icone2">
                         <Link to="/CadastrologinPage"><img src={imgUser} alt="user" /></Link>
                     </li>
                 </ul>
