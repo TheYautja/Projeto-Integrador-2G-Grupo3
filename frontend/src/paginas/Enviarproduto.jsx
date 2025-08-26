@@ -78,9 +78,9 @@ function EnviarProduto() {
       <form  onSubmit={handleSubmit}>
         <label> nome <input type="text" name="nome" value={FormState.nome} onChange={handleChange} required /> </label>
         <label> categoria <input type="text" name="categoria" value={FormState.categoria} onChange={handleChange} required /> </label>
-        <label> condicao <input type="text" name="condicao" value={FormState.condicao} onChange={handleChange} required /> </label>
-        <label> preco <input type="number" name="preco" value={FormState.preco} onChange={handleChange} required /> </label>
-        <label htmlFor="foto">imagem (clicavel, falta estilizar)</label>
+        <label> condição <input type="text" name="condicao" value={FormState.condicao} onChange={handleChange} required /> </label>
+        <label> preço <input type="number" name="preco" value={FormState.preco} onChange={handleChange} required /> </label>
+        <label htmlFor="foto"><div className="botao-foto"> Fotos (upload)</div></label>
 
         <input id="foto" type="file" name="foto" accept="image/*" onChange={(e) => setFormState(
           { ...FormState, foto: e.target.files[0] })}
