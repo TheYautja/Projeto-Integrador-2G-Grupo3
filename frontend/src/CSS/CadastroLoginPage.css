@@ -1,0 +1,87 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+}
+
+.containerCard {
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 15px;
+  max-width: 400px;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.containerCard form {
+  display: flex;
+  flex-direction: column;
+  min-width: 75%;
+}
+
+
+.containerCard input {
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 90%;
+  border: 1px solid #ccc;
+}
+
+.containerCard button {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.containerCard button:hover {
+  background-color: #45a049;
+}
+
+
+
+.botoes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.botoes button {
+  width: 120px;
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: 1px solid #4caf50;
+  background-color: white;
+  color: #4caf50;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.containerPFP {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.pfp {
+  width: 100%; 
+  height:auto;
+  object-fit: cover; 
+
+}
+
+
+
+
+
+
