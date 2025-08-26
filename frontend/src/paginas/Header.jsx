@@ -1,8 +1,8 @@
 import "../CSS/Header.css"
 import { Link } from "react-router-dom";
-import imgCarrinho from '../assets/shopping-cart.png';
-import imgUser from '../assets/icon.png';
-import imgLogo from '../assets/eco-bag - Copy.png';
+import imgCarrinho from '../assets/header carrinho.png';
+import imgUser from '../assets/header pfp.png';
+import imgLogo from '../assets/header bolsa.png';
 
 function Header(){
     return(

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from './Header';
 import axios from 'axios';
 import '../CSS/EnviarProduto.css';
+import ondasVerdes from "../assets/fundo.png"
 
 const url = "http://localhost:5000";
 
@@ -71,6 +72,7 @@ function EnviarProduto() {
   return (
     <div>
       <Header />
+      <section className="corpo">
       <h2>enviar produto</h2>
 
       <form  onSubmit={handleSubmit}>
@@ -89,6 +91,8 @@ function EnviarProduto() {
         <button type="submit">{editarID ? "Atualizar Produto" : "Enviar Produto"}</button>
         
       </form>
+      <img className="ondas" src={ondasVerdes}></img>
+    </section>
     </div>
   );
 }
