@@ -12,6 +12,16 @@
     align-items: left;
     color: white;
     text-align: center;
+    animation: zoomBanner 13s ease-in-out infinite alternate;
+}
+
+@keyframes zoomBanner {
+    0% {
+         background-size: 110%; 
+        }
+    100% {
+         background-size: 125%; 
+        }
 }
 
 .bannerHomepage p {
@@ -19,22 +29,39 @@
     max-width: 60%;
     margin-bottom: 2rem;
     margin-top: 10%;
+    animation: sobe 1.5s ease-out 0.5s forwards;
+}
+
+@keyframes sobe {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .bannerHomepage button {
     width: 25%;
     position: absolute;
     padding: 12px 32px;
-    background-color: rgb(7, 97, 19);
+    background-color: rgb(15, 102, 60);
     cursor: pointer;
     margin-top: 2rem;
     font-size: 24px;
     color: white;
     right: 57%;
     top: 76%;
-
+    animation: cima 1.5s ease-out 1s forwards, pulsar 10s ease-in-out 2s infinite;
+    transition: all 0.3s ease;
 }
 
+@keyframes pulsar {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
 
 
 html, body {
@@ -85,12 +112,30 @@ html, body {
     background-color: #ffffff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: deslizaCima 0.8s ease-out forwards;
 }
 
+.cartaoDestaque:nth-child(1) { animation-delay: 0.2s; }
+.cartaoDestaque:nth-child(2) { animation-delay: 0.4s; }
+.cartaoDestaque:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes deslizaCima {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 .cartaoDestaque:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.cartaoDestaque:hover h3 {
+    color: #2e7d32;
 }
 
 .cartaoDestaque img {

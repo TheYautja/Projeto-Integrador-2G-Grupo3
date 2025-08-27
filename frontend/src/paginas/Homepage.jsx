@@ -4,6 +4,8 @@ import img1 from "../assets/eco-bag.png"
 import ondasVerdes from "../assets/homepage ondas verdes.png"
 import folhinhas from "../assets/homepage folhas.png"
 import reciclagem from "../assets/homepage reciclagem.png"
+import Botao from "./BotaoFoda.jsx"
+
 
 
 function Homepage (){
@@ -15,7 +17,7 @@ function Homepage (){
             <section id="hero">
                 <div className="bannerHomepage">
                     <p>Transforme o velho em novo, Compre e venda com <span className="negrito">consciencia</span></p>
-                        <button id="botoesHomepage">comece a vender</button>
+                        <Botao />
                 </div>
             </section>
 
