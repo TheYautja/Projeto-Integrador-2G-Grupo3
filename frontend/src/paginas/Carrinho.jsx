@@ -24,7 +24,7 @@ function Carrinho() {
   const removerItem = async (id) => {
     try {
       await axios.delete(`${url}/carrinho/${id}`, { withCredentials: true });
-      setItens(itens.filter(item => item.id !== id));
+      setItens(itens.filter((item) => item.id !== id));
     } catch {
       alert("Erro ao remover item");
     }
@@ -38,12 +38,17 @@ function Carrinho() {
         {itens.length === 0 ? (
           <p className="carrinho-vazio">Carrinho vazio</p>
         ) : (
-          itens.map(item => (
+          itens.map((item) => (
             <div className="item" key={item.id}>
-              {item.foto && <img src={item.foto} alt={item.nome} />}
+              {item.foto && (
+                <img
+                  src={`${url}/${item.foto}`}
+                  alt={item.nome}
+                />
+              )}
               <div className="carrinhoInfo">
                 <h4>{item.nome}</h4>
-                <p className="price">Preço: R$ {item.preco}</p>
+                <p className="preco">Preço: R$ {item.preco}</p>
                 <p className="quantidade">Quantidade: {item.quantidade}</p>
               </div>
               <button onClick={() => removerItem(item.id)}>Remover</button>

@@ -2,6 +2,7 @@ import React from 'react';
 import '../CSS/Dicaseoficinas.css';
 import Header from "../paginas/Header"
 
+
 function DicasOficinas() {
   return (
     <div>

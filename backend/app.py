@@ -131,17 +131,27 @@ def ver_carrinho():
     conn = pegar_conexao()
     cur = conn.cursor()
     cur.execute(
-        """ SELECT c.id, p.nome, p.preco, c.quantidade
-        FROM carrinho c
-        JOIN produtos p ON c.produto_id = p.id
-        WHERE c.usuario_id = %s """,
-     (session["user_id"],))
+        """ SELECT c.id, p.nome, p.preco, c.quantidade, p.foto_url
+            FROM carrinho c
+            JOIN produtos p ON c.produto_id = p.id
+            WHERE c.usuario_id = %s """,
+        (session["user_id"],)
+    )
     
     items = cur.fetchall()
     cur.close()
     conn.close()
 
-    carrinho = [{"id": i[0], "nome": i[1], "preco": i[2], "quantidade": i[3]} for i in items]
+    carrinho = [
+        {
+            "id": i[0],
+            "nome": i[1],
+            "preco": i[2],
+            "quantidade": i[3],
+            "foto": i[4]
+        }
+        for i in items
+    ]
     return jsonify({"carrinho": carrinho})
 
 
