@@ -70,3 +70,40 @@
 .videos a:hover {
   text-decoration: underline;
 }
+/* Container da agenda */
+.agenda {
+  display: flex;
+  align-items: flex-start;
+  margin: 30px 0;
+}
+
+/* Espiral */
+.espiral {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-right: -15px; /* puxa os anéis para perto da borda */
+}
+
+.espiral div {
+  width: 25px;
+  height: 25px;
+  border: 4px solid black;   /* aro preto */
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ccc, #999); /* efeito metálico */
+  margin: 10px 0;
+}
+
+/* Bloco da agenda */
+.agenda-box {
+  border: 4px solid #145214; /* verde da borda */
+  padding: 20px;
+  background-color: #f8f8f8;
+  width: 250px;
+}
+
+.agenda-box h3 {
+  margin-bottom: 15px;
+  color: #145214;
+  font-weight: bold;
+}
