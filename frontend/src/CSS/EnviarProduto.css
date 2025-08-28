@@ -2,112 +2,151 @@ h2 {
   color: #245c44;
   margin-top: 5%;
   margin-left: 6%;
-  font-size: 1.5rem;
+  font-size: 30px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 form {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgba(252, 252, 252, 0);
+  background-color: #fff;
   padding: 15px;
   border-radius: 8px;
-  margin-bottom: 5%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-left: 5%;
-  margin-right: 40%;
-  margin-top: 2%;
+  margin: 2% 40% 5% 5%;
+  box-shadow: 0 2px 5px #fff;
 }
 
 label {
   display: block;
-  margin-bottom: 10px;
-  font-weight: bold;
   width: 100%;
   margin-top: 3%;
+  margin-bottom: 10px;
+  font-weight: bold;
   color: #1d532b;
+  white-space: pre-line;
 }
 
-input {
-  margin-top: 5px;
+textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
   padding: 6px;
-  width: 97%;
   border: 1px solid #ccc;
   border-radius: 10px;
+  margin-top: 5px;
+  resize: none;
+  font-family: Arial, Helvetica, sans-serif;
+  white-space: pre-wrap;
+}
+
+textarea[name="preco"] {
+  text-align: left;
+  font-weight: bold;
+}
+
+small {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.8rem;
+  color: #555;
 }
 
 button {
   padding: 8px 12px;
-  margin-top: 7%;
-  margin-left: 25%;
+  margin: 7% 0 0 25%;
+  width: 50%;
+  height: 50px;
   border: none;
+  border-radius: 10px;
   background-color: #1d532b;
   color: white;
   cursor: pointer;
-  border-radius: 10px;
   transition: background-color 0.2s;
-  width: 50%;
+  font-size: 20px;
 }
 
 button:hover {
-  background-color: #218838;
+  background-color: #09852e;
 }
 
 .botao-foto {
   padding: 8px 12px;
   margin-top: 10px;
   margin-right: 5px;
+  width: 97%;
   border: none;
+  border-radius: 10px;
   background-color: #1d532b;
   color: white;
   cursor: pointer;
-  border-radius: 10px;
   transition: 0.2s;
   text-align: center;
-  width: 96%;
 }
 
 .botao-foto:hover {
   background-color: #218838;
 }
 
-/* Preview das fotos em grid uniforme abaixo do botão */
+.ondas {
+  position: absolute;
+  right: 0;
+  top: -1%;
+  width: 40%;
+  height: 100%;
+  min-width: 200px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.corpo {
+  position: relative;
+}
+
 .preview-fotos {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 10px;
-  width: 96%; /* mesma largura do botão */
+  max-width: 100%;
 }
 
 .foto-container {
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   cursor: pointer;
   overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .foto-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid #ccc;
 }
 
 .remover-foto {
   position: absolute;
-  top: -5px;
-  right: -5px;
-  background: rgb(0, 255, 42);
+  top: 5px;
+  right: 5px;
+  width: 22px;
+  height: 22px;
+  background: rgba(255, 0, 0, 0.8);
   color: white;
-  border: none;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
   cursor: pointer;
   font-size: 14px;
-  line-height: 18px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.remover-foto:hover {
+  background: red;
 }
 
 .foto-zoom {
@@ -171,17 +210,15 @@ button:hover {
   color: #333;
 }
 
-.ondas {
-  position: absolute;
-  right: 0;
-  top: -1%;
-  min-width: 200px;
-  object-fit: cover;
-  z-index: 1;
-  width: 30%;
-  height: 100%;
-}
-
-.corpo {
-  position: relative;
+@media (max-width: 768px) {
+  form {
+    margin-right: 5%;
+  }
+  button {
+    width: 90%;
+    margin-left: 5%;
+  }
+  .botao-foto {
+    width: 100%;
+  }
 }
