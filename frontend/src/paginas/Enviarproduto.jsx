@@ -17,7 +17,6 @@ function EnviarProduto() {
     fotos: []
   });
 
-  const [produtos, setProdutos] = useState([]);
   const [fotoZoom, setFotoZoom] = useState(null);
 
   const handleChange = (e) => {
@@ -83,13 +82,6 @@ function EnviarProduto() {
 
       const response = await axios.post(`${url}/produtos`, data);
 
-      setProdutos((prev) => [
-        ...prev,
-        {
-          ...FormState,
-          fotosPreview: FormState.fotos.map((f) => URL.createObjectURL(f))
-        }
-      ]);
 
       setFormState({
         nome: "",
@@ -246,19 +238,7 @@ function EnviarProduto() {
           <button type="submit">Anunciar Produto</button>
         </form>
 
-        <div className="lista-produtos">
-          {produtos.map((p, index) => (
-            <div key={index} className="produto-card">
-              {p.fotosPreview?.[0] && (
-                <img src={p.fotosPreview[0]} alt="foto-produto" />
-              )}
-              <h3>{p.nome}</h3>
-              <p><strong>Preço:</strong> R${p.preco}</p>
-              <p><strong>Descrição:</strong> {p.descricao}</p>
-              <p><strong>Cidade:</strong> {p.localizacao}</p>
-            </div>
-          ))}
-        </div>
+
 
         <img className="ondas" src={ondasVerdes} alt="fundo" />
       </section>

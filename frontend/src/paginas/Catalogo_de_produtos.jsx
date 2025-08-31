@@ -13,16 +13,24 @@ function CatalogoDeProdutos() {
   }, []);
 
   const fetchProdutos = async () => {
-    const res = await axios.get(`${url}/produtos`);
-    setProdutos(res.data.produto);
+    try {
+      const res = await axios.get(`${url}/produtos`);
+      setProdutos(res.data.produto);
+    } catch (error) {
+      console.error("Erro ao buscar produtos:", error);
+    }
   };
 
   const handleComprar = async (produtoId) => {
     try {
-      await axios.post(`${url}/carrinho`, { produto_id: produtoId, quantidade:1 }, { withCredentials:true });
-      alert("produto adicionado ao carrinho");
+      await axios.post(
+        `${url}/carrinho`,
+        { produto_id: produtoId, quantidade: 1 },
+        { withCredentials: true }
+      );
+      alert("Produto adicionado ao carrinho");
     } catch {
-      alert("logue primeiro");
+      alert("Faça login primeiro");
     }
   };
 
@@ -33,25 +41,29 @@ function CatalogoDeProdutos() {
         <h1>Produtos</h1>
         <div className="product-list">
           {produtos.map(p => (
-<div key={p.id} className="product-card">
-  <img src={`${url}/${p.foto_url}`} alt={p.nome} />
+            <div key={p.id} className="product-card">
+              {p.foto_url ? (
+                <img src={`${url}/${p.foto_url}`} alt={p.nome} />
+              ) : (
+                <div className="placeholder">Sem imagem</div>
+              )}
 
-  <div className="product-info">
-    <h3>{p.nome}</h3>
-    <p className="price">R$ {p.preco}</p>
-    <p className="impact">
-      <strong>Impacto Ambiental</strong><br />
-      {p.descricao}
-    </p>
-    <button className="buy-btn" onClick={() => handleComprar(p.id)}>
-      Comprar
-    </button>
-  </div>
-</div>
+              <div className="product-info">
+                <h3>{p.nome}</h3>
+                <p className="price">R$ {p.preco}</p>
+                <p className="impact">
+                  <strong>Impacto Ambiental</strong><br />
+                  {p.descricao}
+                </p>
+                <button className="buy-btn" onClick={() => handleComprar(p.id)}>
+                  Comprar
+                </button>
+              </div>
+            </div>
           ))}
         </div>
       </main>
-    </div> 
+    </div>
   );
 }
 

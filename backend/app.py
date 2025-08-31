@@ -164,14 +164,17 @@ def adicionar_produto():
     descricao = request.form.get("descricao")
     localizacao = request.form.get("localizacao")
 
-    foto = request.files.get("foto")
-    foto_url = None
+    fotos = request.files.getlist("fotos")
+    foto_urls = []
 
-    if foto:
-        filename = foto.filename
-        caminho = os.path.join(UPLOAD_FOLDER, filename)
-        foto.save(caminho)
-        foto_url = f"static/uploads/{filename}"
+    for foto in fotos:
+        if foto:
+            filename = foto.filename
+            caminho = os.path.join(UPLOAD_FOLDER, filename)
+            foto.save(caminho)
+            foto_urls.append(f"static/uploads/{filename}")
+
+    foto_url = foto_urls[0] if foto_urls else None
 
     conn = pegar_conexao()
     cur = conn.cursor()
@@ -183,7 +186,7 @@ def adicionar_produto():
         )
         produto_id = cur.fetchone()[0]
         conn.commit()
-        return jsonify({"id": produto_id, "nome": nome}), 201
+        return jsonify({"id": produto_id, "nome": nome, "foto_url": foto_url, "all_fotos": foto_urls}), 201
     except Exception as e:
         conn.rollback()
         return jsonify({"error": str(e)}), 400

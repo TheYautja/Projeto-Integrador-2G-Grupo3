@@ -98,6 +98,7 @@ html, body {
 
 .destaquesHomepage {
     padding-top: 160px;
+    padding-bottom: 40px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -106,7 +107,7 @@ html, body {
 
 .cartaoDestaque{
     border-radius: 16px;
-    padding: 16px;
+    padding: 26px;
     width: 260px;
     text-align: center;
     background-color: #ffffff;
@@ -140,6 +141,7 @@ html, body {
 
 .cartaoDestaque img {
     width: 100%;
+    max-height: 300px;
     border-radius: 12px;
     object-fit: cover;
 }
