@@ -41,26 +41,30 @@ function CatalogoDeProdutos() {
         <h1>Produtos</h1>
         <div className="product-list">
           {produtos.map(p => (
-            <div key={p.id} className="product-card">
-              {p.foto_url ? (
-                <img src={`${url}/${p.foto_url}`} alt={p.nome} />
-              ) : (
-                <div className="placeholder">Sem imagem</div>
-              )}
+  <div key={p.id} className="product-card">
+    {p.foto_url ? (
+      <img src={`${url}/${p.foto_url}`} alt={p.nome} />
+    ) : (
+      <div className="placeholder">Sem imagem</div>
+    )}
 
-              <div className="product-info">
-                <h3>{p.nome}</h3>
-                <p className="price">R$ {p.preco}</p>
-                <p className="impact">
-                  <strong>Impacto Ambiental</strong><br />
-                  {p.descricao}
-                </p>
-                <button className="buy-btn" onClick={() => handleComprar(p.id)}>
-                  Comprar
-                </button>
-              </div>
-            </div>
-          ))}
+    <div className="product-info">
+      <h3>{p.nome}</h3>
+      <p className="price">R$ {p.preco}</p>
+
+      <p className="description">{p.descricao}</p>
+
+      <p className="impact">
+        {p.carbono ?? 0} kg CO₂ economizados
+      </p>
+
+      <button className="buy-btn" onClick={() => handleComprar(p.id)}>
+        Comprar
+      </button>
+    </div>
+  </div>
+))}
+
         </div>
       </main>
     </div>

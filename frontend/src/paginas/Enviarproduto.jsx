@@ -5,6 +5,7 @@ import "../CSS/EnviarProduto.css";
 import ondasVerdes from "../assets/fundo.png";
 
 const url = "http://localhost:5000";
+const categoriasPermitidas = ["eletronicos", "moveis", "livros", "roupas", "outros"];
 
 function EnviarProduto() {
   const [FormState, setFormState] = useState({
@@ -29,15 +30,9 @@ function EnviarProduto() {
         partes[1] = partes[1]?.slice(0, 2);
         novoValor = partes.join(",");
       }
-      setFormState((prev) => ({
-        ...prev,
-        [name]: novoValor
-      }));
+      setFormState((prev) => ({ ...prev, [name]: novoValor }));
     } else {
-      setFormState((prev) => ({
-        ...prev,
-        [name]: value
-      }));
+      setFormState((prev) => ({ ...prev, [name]: value }));
     }
   };
 
@@ -80,8 +75,7 @@ function EnviarProduto() {
         }
       });
 
-      const response = await axios.post(`${url}/produtos`, data);
-
+      await axios.post(`${url}/produtos`, data);
 
       setFormState({
         nome: "",
@@ -94,15 +88,8 @@ function EnviarProduto() {
       });
 
       alert("Produto cadastrado com sucesso!");
-      console.log("Resposta do servidor:", response.data);
     } catch (error) {
-      if (error.response) {
-        console.error("Erro do servidor:", error.response.data);
-      } else if (error.request) {
-        console.error("Sem resposta do servidor:", error.request);
-      } else {
-        console.error("Erro inesperado:", error.message);
-      }
+      console.error("Erro ao enviar produto:", error.response?.data || error.message);
       alert("Erro ao enviar produto. Veja o console.");
     }
   };
@@ -130,16 +117,17 @@ function EnviarProduto() {
 
           <label>
             Categoria:
-            <textarea
+            <select
               name="categoria"
               value={FormState.categoria}
               onChange={handleChange}
-              placeholder="Preencha aqui"
-              rows={2}
-              maxLength={50}
               required
-            />
-            <small>{FormState.categoria.length} / 50</small>
+            >
+              <option value="">Selecione uma categoria</option>
+              {categoriasPermitidas.map((cat) => (
+                <option key={cat} value={cat}>{cat}</option>
+              ))}
+            </select>
           </label>
 
           <label>
@@ -237,8 +225,6 @@ function EnviarProduto() {
 
           <button type="submit">Anunciar Produto</button>
         </form>
-
-
 
         <img className="ondas" src={ondasVerdes} alt="fundo" />
       </section>
