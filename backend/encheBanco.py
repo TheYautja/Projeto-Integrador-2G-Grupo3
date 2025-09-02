@@ -22,9 +22,11 @@ CARBONO = {
 CATEGORIAS = list(CARBONO.keys())
 CONDICOES = ["novo", "usado", "seminovo", "desmanchando"]
 FOTOS = [
-    "static/uploads/banner.png",
-    "static/uploads/The-Pirate-Bay-Symbol.png",
-    "static/uploads/trinca-ferro.webp"
+    "static/uploads/celular.webp",
+    "static/uploads/livro.jpg",
+    "static/uploads/camisa.webp",
+    "static/uploads/banco.jpg",
+    "static/uploads/banco2.jpg"
 ]
 
 def get_conn():

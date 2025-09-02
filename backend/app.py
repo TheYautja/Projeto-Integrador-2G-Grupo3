@@ -31,35 +31,34 @@ CARBON_WEIGHTS = {
 
 
 
-
 @app.route("/usuarios", methods=["POST"])
 def cadastrar_usuario():
-    data = request.json
-    nome = data.get("nome")
-    email = data.get("email")
-    senha = generate_password_hash(data.get("senha"))
-    localizacao = data.get("localizacao")
-    cpf = data.get("cpf")
+    nome = request.form.get("nome")
+    email = request.form.get("email")
+    senha = generate_password_hash(request.form.get("senha"))
+    localizacao = request.form.get("localizacao")
+    cpf = request.form.get("cpf")
 
     conn = pegar_conexao()
     cur = conn.cursor()
     try:
         cur.execute(
-            """ INSERT INTO usuarios (nome, email, senha, localizacao, cpf)
-            VALUES (%s, %s, %s, %s, %s) RETURNING id """,
-        (nome, email, senha, localizacao, cpf))
-
+            """INSERT INTO usuarios (nome, email, senha, localizacao, cpf)
+               VALUES (%s, %s, %s, %s, %s) RETURNING id""",
+            (nome, email, senha, localizacao, cpf)
+        )
         usuario_id = cur.fetchone()[0]
         conn.commit()
 
         return jsonify({"id": usuario_id, "nome": nome, "email": email}), 201
-
     except Exception as e:
         conn.rollback()
         return jsonify({"error": str(e)}), 400
     finally:
         cur.close()
         conn.close()
+
+        
 
 @app.route("/login", methods=["POST"])
 def login():
