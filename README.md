@@ -14,6 +14,7 @@
 * crie o banco   (CREATE DATABASE bazar_biodegradavel;)
 * crie o usuario pra teste   (CREATE USER testador WITH PASSWORD '12345678';), note que se mudar o usuario ou a senha deve tambem alterar as credenciais no app.py
 * de as permissoes   (GRANT ALL PRIVILEGES ON DATABASE bazar_biodegradavel TO testador;)
+* GRANT ALL PRIVILEGES ON SCHEMA public TO testador;
 * rode o encheBanco.py (para popular o banco com produtos)
 * rode o app.py
 * backend agora esta funcionando
