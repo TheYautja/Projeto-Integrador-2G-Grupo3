@@ -4,7 +4,7 @@
 3. NodeJS
 4. Git
 
-## 1 - Rodando o back:
+## 1 - Rodando o back e populando o banco:
 * clone o repositorio   (git clone https://github.com/TheYautja/Projeto-Integrador-2G-Grupo3.git)
 * navegue ate a pasta do backend   (cd backend)
 * crie um ambiente virtual do python   (python -m venv venv)
@@ -14,7 +14,9 @@
 * crie o banco   (CREATE DATABASE bazar_biodegradavel;)
 * crie o usuario pra teste   (CREATE USER testador WITH PASSWORD '12345678';), note que se mudar o usuario ou a senha deve tambem alterar as credenciais no app.py
 * de as permissoes   (GRANT ALL PRIVILEGES ON DATABASE bazar_biodegradavel TO testador;)
-* rode   (python app.py)
+* rode o encheBanco.py (para popular o banco com produtos)
+* rode o app.py
+* backend agora esta funcionando
 
 ## 2 - Rodando o front:
 * navegue ate a pasta do frontend   (cd Projeto-Integrador-2G-Grupo3/frontend)
