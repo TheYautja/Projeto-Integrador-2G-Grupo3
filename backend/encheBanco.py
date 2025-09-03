@@ -4,8 +4,8 @@ import random
 
 
 DB_NAME = "bazar_biodegradavel"
-DB_USER = "postgres"
-DB_PASS = "77507750"
+DB_USER = "testador"
+DB_PASS = "12345678"
 DB_HOST = "localhost"
 DB_PORT = "5432"
 

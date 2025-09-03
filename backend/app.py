@@ -7,8 +7,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 def pegar_conexao():
     return psycopg2.connect(
         dbname="bazar_biodegradavel",
-        user="postgres",
-        password="77507750",
+        user="testador",
+        password="12345678",
         host="localhost",
         port="5432"
     )
