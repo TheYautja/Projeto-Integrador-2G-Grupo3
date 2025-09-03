@@ -15,26 +15,6 @@ function DicasOficinas() {
         <p><strong>dica criativa:</strong> “Roupa tie-dye com sobras de tecido”</p>
       </div>
 
-     <div className="agenda">
-  {/* Espiral */}
-  <div className="espiral">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-
-  {/* Bloco da agenda */}
-  <div className="agenda-box">
-    <h2>Agenda de oficinas</h2>
-    <ul>
-      <li>05/07 - Oficina de Móveis (Concórdia - SC)</li>
-      <li>08/07 - Oficina de Costura (Online)</li>
-      <li>15/08 - Oficina de Brinquedo (Capinzal - SC)</li>
-    </ul>
-  </div>
-</div>
 
       <div className="videos">
         <h2>Vídeos</h2>

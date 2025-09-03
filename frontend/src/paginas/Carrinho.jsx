@@ -23,7 +23,7 @@ function Carrinho() {
     } catch {
       alert("Faça login primeiro");
     }
-  };
+  }; 
 
   const removerItem = async (id) => {
     try {

@@ -15,7 +15,6 @@ function Header(){
                     <li><Link to="/homepage">INICIO</Link></li>
                     <li><Link to="/Catalogo_de_produtos">PRODUTOS</Link></li>
                     <li><Link to="/Enviarproduto">VENDER</Link></li>
-                    <li><Link to="/Dicaseoficinas">DICAS E OFICINAS</Link></li>
                     <li className="icone">
                         <Link to="/Carrinho"><img src={imgCarrinho} alt="carrinho" /></Link>
                     </li>

@@ -107,6 +107,12 @@
   cursor: pointer;
   overflow: hidden;
   border-radius: 0;
+  color: transparent;
+  transition: color 0.5s ease;
+}
+
+.item:hover button {
+  color: white;
 }
 
 .item button:hover {

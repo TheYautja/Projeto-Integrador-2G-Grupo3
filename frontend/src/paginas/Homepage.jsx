@@ -60,7 +60,7 @@ function Homepage (){
       <Header />
       <section id="hero">
         <div className="bannerHomepage">
-          <p>Transforme o velho em novo, Compre e venda com <span className="negrito">consciencia</span></p>
+          <p>Transforme o velho em novo, Compre e venda com <span className="negrito">Consciência</span></p>
           <Botao onClick={goToCatalogo} />
         </div>
       </section>
