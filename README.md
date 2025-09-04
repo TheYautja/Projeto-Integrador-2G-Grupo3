@@ -12,6 +12,7 @@
 * instale as dependencias   (pip install -r requirements.txt)
 * abra o psql
 * crie o banco   (CREATE DATABASE bazar_biodegradavel;)
+* conecte-se ao banco (\c bazar_biodegradavel)
 * crie o usuario pra teste   (CREATE USER testador WITH PASSWORD '12345678';), note que se mudar o usuario ou a senha deve tambem alterar as credenciais no app.py
 * de as permissoes   (GRANT ALL ON DATABASE bazar_biodegradavel TO testador;)
 * GRANT ALL PRIVILEGES ON SCHEMA public TO testador;
