@@ -7,7 +7,7 @@ import pfp from "../assets/pfpcadastro.png";
 const url = "http://localhost:5000";
 
 export default function CadastroLoginPage() {
-  const [formCadastro, setFormCadastro] = useState({ nome:"", email:"", senha:"", localizacao:"", cpf:"" });
+  const [formCadastro, setFormCadastro] = useState({ nome:"", email:"", senha:"", localizacao:"", cpf:"", endereco:"", numero:"", complemento:"", bairro:"", CEP:"", cidade:"", estado:"" });
   const [formLogin, setFormLogin] = useState({ email: "", senha: "" });
   const [mostrarLogin, setmostrarLogin] = useState(false);
 
