@@ -61,11 +61,13 @@ function Carrinho() {
                   </p>
                 </div>
                 <button onClick={() => removerItem(item.carrinho_id)}>Remover</button>
-              </div>
+                </div>
+                
             ))}
             <hr />
             <h3>Total de carbono economizado: {totalCarbon} kg CO₂</h3>
             <h3>Total estimado: R$ {totalPrice}</h3>
+             <button onClick={console.log("Tudo comprado")}>Comprar tudo</button>
           </>
         )}
       </div>
