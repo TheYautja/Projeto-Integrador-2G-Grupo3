@@ -35,12 +35,12 @@ export default function CadastroLoginPage() {
       formData.append("cpf", formCadastro.cpf);
       formData.append("endereco", formCadastro.endereco);
       formData.append("numero", formCadastro.numero);
-      formData.append("Complemento", formCadastro.Complemento
+      formData.append("Complemento", formCadastro.complemento
       );
-      formData.append("Bairro", formCadastro.Bairro);
+      formData.append("Bairro", formCadastro.bairro);
       formData.append("CEP", formCadastro.CEP);
-      formData.append("Cidade", formCadastro.Cidade);
-      formData.append("Estado", formCadastro.Estado);
+      formData.append("Cidade", formCadastro.cidade);
+      formData.append("Estado", formCadastro.estado);
       if (fotoPerfil) formData.append("FotoPerfil", fotoPerfil);
     
 
@@ -103,6 +103,13 @@ export default function CadastroLoginPage() {
                 <input type="text" onChange={e => setFormCadastro({...formCadastro, cpf:e.target.value})} required />
                 <label>senha</label>
                 <input type="password" onChange={e => setFormCadastro({...formCadastro, senha:e.target.value})} required />
+                <input type="password" onChange={e => setFormCadastro({...formCadastro, endereco:e.target.value})} required />
+                <input type="password" onChange={e => setFormCadastro({...formCadastro, numero:e.target.value})} required />
+                <input type="password" onChange={e => setFormCadastro({...formCadastro, complemento:e.target.value})} required />
+                <input type="password" onChange={e => setFormCadastro({...formCadastro, bairro:e.target.value})} required />
+                <input type="password" onChange={e => setFormCadastro({...formCadastro, CEP:e.target.value})} required />
+                <input type="password" onChange={e => setFormCadastro({...formCadastro, cidade:e.target.value})} required />
+                 <input type="password" onChange={e => setFormCadastro({...formCadastro, estado:e.target.value})} required />
 
                 <button type="submit" className="submit-btn">Cadastrar</button>
 
