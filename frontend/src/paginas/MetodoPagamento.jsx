@@ -1,8 +1,15 @@
-import React, { useEffect, useState } from "react";
+
 import Header from "./Header";
 
 function MetodoPagamento () {
-    return ()
+    return (
+        <div>
+        <Header />
+        <h1>teste</h1>
+
+                    
+        </div>
+    )
 }
 
 export default MetodoPagamento;
