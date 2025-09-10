@@ -51,8 +51,8 @@ def cadastrar_usuario():
     try:
         cur.execute(
             """INSERT INTO usuarios (nome, email, senha, localizacao, cpf , endereco, numero, complemento, bairro, CEP, cidade, estado)
-               VALUES (%s, %s, %s, %s, %s) RETURNING id""",
-            (nome, email, senha, localizacao, cpf)
+               VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING id""",
+            (nome, email, senha, localizacao, cpf, endereco, numero, complemento, bairro, CEP, cidade, estado)
         )
         usuario_id = cur.fetchone()[0]
         conn.commit()
