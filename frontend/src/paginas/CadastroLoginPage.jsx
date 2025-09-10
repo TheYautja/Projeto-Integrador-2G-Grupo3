@@ -104,19 +104,19 @@ export default function CadastroLoginPage() {
                 <label>senha</label>
                 <input type="password" onChange={e => setFormCadastro({...formCadastro, senha:e.target.value})} required />
                 <label>endereco</label>
-                <input type="password" onChange={e => setFormCadastro({...formCadastro, endereco:e.target.value})} required />
+                <input type="text" onChange={e => setFormCadastro({...formCadastro, endereco:e.target.value})} required />
                 <label>numero</label>
-                <input type="password" onChange={e => setFormCadastro({...formCadastro, numero:e.target.value})} required />
+                <input type="text" onChange={e => setFormCadastro({...formCadastro, numero:e.target.value})} required />
                 <label>complemento</label>
-                <input type="password" onChange={e => setFormCadastro({...formCadastro, complemento:e.target.value})} required />
+                <input type="text" onChange={e => setFormCadastro({...formCadastro, complemento:e.target.value})} required />
                 <label>bairro</label>
-                <input type="password" onChange={e => setFormCadastro({...formCadastro, bairro:e.target.value})} required />
+                <input type="text" onChange={e => setFormCadastro({...formCadastro, bairro:e.target.value})} required />
                 <label>CEP</label>
-                <input type="password" onChange={e => setFormCadastro({...formCadastro, CEP:e.target.value})} required />
+                <input type="text" onChange={e => setFormCadastro({...formCadastro, CEP:e.target.value})} required />
                 <label>cidade</label>
-                <input type="password" onChange={e => setFormCadastro({...formCadastro, cidade:e.target.value})} required />
+                <input type="text" onChange={e => setFormCadastro({...formCadastro, cidade:e.target.value})} required />
                 <label>estado</label>
-                 <input type="password" onChange={e => setFormCadastro({...formCadastro, estado:e.target.value})} required />
+                 <input type="text" onChange={e => setFormCadastro({...formCadastro, estado:e.target.value})} required />
 
                 <button type="submit" className="submit-btn">Cadastrar</button>
 
