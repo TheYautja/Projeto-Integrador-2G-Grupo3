@@ -3,6 +3,7 @@ import Header from "./Header";
 import axios from "axios";
 import "../CSS/Carrinho.css";
 import "/MetodoPagamento.jsx";
+import { Link } from "react-router-dom";
 
 const url = "http://localhost:5000";
 
@@ -68,7 +69,9 @@ function Carrinho() {
             <hr />
             <h3>Total de carbono economizado: {totalCarbon} kg CO₂</h3>
             <h3>Total estimado: R$ {totalPrice}</h3>
+            <Link to =  "/MetodoPagamento" >
              <button onClick={console.log("Tudo comprado")}>Comprar tudo</button>
+             </Link>
           </>
         )}
       </div>
