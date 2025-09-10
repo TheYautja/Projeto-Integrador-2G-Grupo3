@@ -33,7 +33,16 @@ export default function CadastroLoginPage() {
       formData.append("senha", formCadastro.senha);
       formData.append("localizacao", formCadastro.localizacao);
       formData.append("cpf", formCadastro.cpf);
+      formData.append("Endereço", formCadastro.Endereço);
+      formData.append("Numero", formCadastro.Numero);
+      formData.append("Complemento", formCadastro.Complemento
+      );
+      formData.append("Bairro", formCadastro.Bairro);
+      formData.append("CEP", formCadastro.CEP);
+      formData.append("Cidade", formCadastro.Cidade);
+      formData.append("Estado", formCadastro.Estado);
       if (fotoPerfil) formData.append("FotoPerfil", fotoPerfil);
+    
 
       await axios.post(`${url}/usuarios`, formData, {
         headers: { "Content-Type": "multipart/form-data" }
