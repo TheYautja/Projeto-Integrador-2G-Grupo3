@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import axios from "axios";
 import "../CSS/Carrinho.css";
-import "MetodoPagamento.jsx";
+import "/MetodoPagamento.jsx";
 
 const url = "http://localhost:5000";
 
