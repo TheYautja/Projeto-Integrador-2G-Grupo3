@@ -41,12 +41,19 @@ def criaTabelas():
 
     cur.execute("""
     CREATE TABLE IF NOT EXISTS usuarios (
-        id SERIAL PRIMARY KEY,
-        nome TEXT NOT NULL,
-        email TEXT UNIQUE NOT NULL,
-        senha TEXT NOT NULL,
-        localizacao TEXT,
-        cpf TEXT UNIQUE
+         id SERIAL PRIMARY KEY,
+         nome TEXT NOT NULL,
+         email TEXT UNIQUE NOT NULL,
+         senha TEXT NOT NULL,
+         localizacao TEXT,
+         cpf TEXT UNIQUE,
+         endereco TEXT NOT NULL,
+         numero TEXT NOT NULL,
+         complemento TEXT NOT NULL,
+         bairro TEXT NOT NULL,
+         CEP TEXT NOT NULL,
+         cidade TEXT NOT NULL,
+         estado TEXT NOT NULL
     );
     """)
 

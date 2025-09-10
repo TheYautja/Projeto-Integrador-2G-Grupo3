@@ -33,8 +33,8 @@ export default function CadastroLoginPage() {
       formData.append("senha", formCadastro.senha);
       formData.append("localizacao", formCadastro.localizacao);
       formData.append("cpf", formCadastro.cpf);
-      formData.append("Endereço", formCadastro.Endereço);
-      formData.append("Numero", formCadastro.Numero);
+      formData.append("endereco", formCadastro.endereco);
+      formData.append("numero", formCadastro.numero);
       formData.append("Complemento", formCadastro.Complemento
       );
       formData.append("Bairro", formCadastro.Bairro);

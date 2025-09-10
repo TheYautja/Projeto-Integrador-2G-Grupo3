@@ -38,12 +38,19 @@ def cadastrar_usuario():
     senha = generate_password_hash(request.form.get("senha"))
     localizacao = request.form.get("localizacao")
     cpf = request.form.get("cpf")
+    endereco = request.form.get("endereco")
+    numero = request.form.get("numero")
+    complemento = request.form.get("complemento")
+    bairro = request.form.get("bairro")
+    CEP = request.form.get("CEP")
+    cidade = request.form.get("cidade")
+    estado = request.form.get("estado")
 
     conn = pegar_conexao()
     cur = conn.cursor()
     try:
         cur.execute(
-            """INSERT INTO usuarios (nome, email, senha, localizacao, cpf)
+            """INSERT INTO usuarios (nome, email, senha, localizacao, cpf , endereco, numero, complemento, bairro, CEP, cidade, estado)
                VALUES (%s, %s, %s, %s, %s) RETURNING id""",
             (nome, email, senha, localizacao, cpf)
         )
